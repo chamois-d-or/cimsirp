@@ -48,7 +48,7 @@ const ContactSectionSplitTwoTone = ({ slice }) => (
         </div>
         <div className="bg-white py-16 px-4 sm:px-6 lg:col-span-3 lg:py-24 lg:px-8 xl:pl-12">
           <div className="max-w-lg mx-auto lg:max-w-none">
-            <form action="#" method="POST" className="grid grid-cols-1 gap-y-6">
+            <form action="" method="" className="grid grid-cols-1 gap-y-6">
               { slice?.items?.map((item, i) => 
                 <div key={ item.field } >
                   <label htmlFor={ item.field } className="sr-only">
