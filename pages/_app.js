@@ -13,6 +13,7 @@ export default function App({ Component, pageProps }) {
       }}
       //linkResolver={linkResolver}
       internalLinkComponent={({ href, anchor, children, ...props }) => (
+        //adding support for anchors that can be passed to a PrismicLink
         <Link href={href+(anchor ? "#"+anchor : "")}>
           <a {...props}>
             {children}

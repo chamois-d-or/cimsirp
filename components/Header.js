@@ -18,7 +18,13 @@ const Header = ({ menu = null , currentLocale = 'en-us', locales = ['en-us'], al
     function handleChange(e) {
         //Handle language redirect through the header language switch, this relies on linkResolver, additional queries would be needed for more complex urls
         const newVersion = alt_versions.find(version => version.lang ===  e.target.value )
-        router.push(linkResolver(newVersion), linkResolver(newVersion), { locale: e.target.value })
+        if(!newVersion){
+            //Redirect to 404 if alternative version does not exist
+            router.push('/404')
+        }
+        else{
+            router.push(linkResolver(newVersion), linkResolver(newVersion), { locale: e.target.value })
+        }
     }
     return (
         <section className="bg-white">
@@ -139,6 +145,9 @@ const Header = ({ menu = null , currentLocale = 'en-us', locales = ['en-us'], al
                     {/* Flyout menus */}
                     <Popover.Group className="z-40 hidden lg:ml-8 lg:block lg:self-stretch">
                         <div className="h-full flex space-x-8">
+                            <a href={"/"+currentLocale} className="border-transparent text-gray-700 hover:text-gray-800 relative z-10 flex items-center transition-colors ease-out duration-200 text-sm font-medium border-b-2 -mb-px pt-px">
+                                Home
+                            </a>
                         {menu?.data?.menuTabs?.map((mainItem, index) => (
                             <Popover key={index} className="flex">
                             {({ open }) => (

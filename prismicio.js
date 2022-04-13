@@ -7,14 +7,13 @@ export const repositoryName = prismic.getRepositoryName(endpoint)
 
 //Update the Link Resolver to match your project's route structure
 export function linkResolver(doc) {
-  if(!doc){
-    return '/404'
-  }
   switch (doc.type) {
     case 'home-page':
       return `/`
     case 'page':
       return `/${doc.uid}`
+      case 'blog-page':
+        return `/blog/${doc.uid}`
     default:
       return '/'
   }
@@ -52,10 +51,10 @@ export const routeResolver = {
     //   "type":"category-page",
     //   "path":"/:lang/category/:uid"
     // },
-    // {
-    //   "type":"blog-page",
-    //   "path":"/marketing/:uid"
-    // },
+    {
+      "type":"blog-page",
+      "path":"/:lang/blog/:uid"
+    },
     // {
     //   "type":"marketing-homepage",
     //   "path":"/marketing/"

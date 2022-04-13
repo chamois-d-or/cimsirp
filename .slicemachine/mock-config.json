@@ -5,7 +5,27 @@
   "_cts": {
     "home_page": {},
     "page": {},
-    "menu": {}
+    "menu": {},
+    "blog-page": {
+      "description": {
+        "config": {
+          "patternType": "PARAGRAPH",
+          "blocks": 1
+        }
+      },
+      "title": {
+        "config": {
+          "patternType": "HEADING",
+          "blocks": 1
+        }
+      },
+      "category": {
+        "config": {
+          "patternType": "HEADING",
+          "blocks": 1
+        }
+      }
+    }
   },
   "slices/ecommerce": {
     "PromoSectionWithBackgroundImage": {},
