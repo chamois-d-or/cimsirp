@@ -5,7 +5,7 @@ import * as prismicH from '@prismicio/helpers'
 const ProductFeaturesWithWideImages = ({ slice }) => (
   <section>
     <div className="bg-white">
-      <div className="max-w-7xl mx-auto py-24 sm:py-32 sm:px-2 lg:px-4">
+      <div className="max-w-7xl mx-auto py-8 sm:py-12 sm:px-2 lg:px-4">
         <div className="max-w-2xl mx-auto px-4 lg:max-w-none">
           <div className="max-w-3xl">
             <h2 className="font-semibold text-gray-500">{prismicH.asText(slice.primary.title)}</h2>

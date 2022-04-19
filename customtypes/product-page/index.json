@@ -1,0 +1,125 @@
+{
+  "id": "product-page",
+  "label": "Product Page",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "UID",
+          "placeholder": ""
+        },
+        "type": "UID"
+      },
+      "product": {
+        "type": "IntegrationFields",
+        "config": {
+          "catalog": "cimsirp--products",
+          "label": "Top Product"
+        }
+      },
+      "description": {
+        "config": {
+          "label": "Product Descripition",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+          "labels": [
+            "text-sm",
+            "text-lg"
+          ]
+        },
+        "type": "StructuredText"
+      },
+      "highlights": {
+        "config": {
+          "label": "Highlights",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "list-item"
+        },
+        "type": "StructuredText"
+      },
+      "details": {
+        "config": {
+          "label": "Details",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph"
+        },
+        "type": "StructuredText"
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "promo_section_with_background_image": {
+              "type": "SharedSlice"
+            },
+            "product_list_with_cta": {
+              "type": "SharedSlice"
+            },
+            "product_features_with_wide_images": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    },
+    "SEO Metadata": {
+      "meta_title": {
+        "type": "Text",
+        "config": {
+          "label": "Meta Title",
+          "placeholder": "My title for Search Engine"
+        }
+      },
+      "meta_description": {
+        "type": "Text",
+        "config": {
+          "label": "Meta Description",
+          "placeholder": "The description that will appear in search engine"
+        }
+      },
+      "canonicalLink": {
+        "config": {
+          "label": "CanonicalLink",
+          "placeholder": "",
+          "select": "web",
+          "allowTargetBlank": false
+        },
+        "type": "Link"
+      },
+      "social_cards": {
+        "type": "Group",
+        "config": {
+          "fields": {
+            "social_card_image": {
+              "type": "Image",
+              "config": {
+                "constraint": {},
+                "thumbnails": [],
+                "label": "Social Card Image"
+              }
+            },
+            "social_card_title": {
+              "type": "Text",
+              "config": {
+                "label": "Social Card Title"
+              }
+            },
+            "social_card_description": {
+              "type": "Text",
+              "config": {
+                "label": "Social card description"
+              }
+            }
+          },
+          "label": "Social Cards - Facebook & Twitter"
+        }
+      }
+    }
+  }
+}

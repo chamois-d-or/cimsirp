@@ -12,8 +12,10 @@ export function linkResolver(doc) {
       return `/`
     case 'page':
       return `/${doc.uid}`
-      case 'blog-page':
-        return `/blog/${doc.uid}`
+    case 'blog-page':
+      return `/blog/${doc.uid}`
+    case 'product-page':
+      return `/product/${doc.uid}`
     default:
       return '/'
   }
@@ -53,10 +55,10 @@ export const routeResolver = {
       "type":"page",
       "path":"/:lang/:uid"
     },
-    // {
-    //   "type":"product-page",
-    //   "path":"/:lang/product/:uid"
-    // },
+    {
+      "type":"product-page",
+      "path":"/:lang/product/:uid"
+    },
     // {
     //   "type":"category-page",
     //   "path":"/:lang/category/:uid"
