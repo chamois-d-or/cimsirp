@@ -19,6 +19,16 @@ export function linkResolver(doc) {
   }
 }
 
+//Adding support for same page anchors that can be passed through an external Link Field like this : https://#anchor
+export function externalLinkResolver(url) {
+  if (url && /^https?:\/\/#/.test(url)) {
+    return url.slice(url.indexOf('#'))
+  }
+  else{
+    return url
+  }
+}
+
 // This factory function allows smooth preview setup
 export function createClient(config = {}) {
   const client = prismic.createClient(endpoint, {
