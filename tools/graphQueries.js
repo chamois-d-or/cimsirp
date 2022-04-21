@@ -27,3 +27,47 @@ export const menuGraphQuery = `{
       }
     }
   }`
+
+  //This query gets product data for home-page
+  export const productListGraphQuery = `{
+    home-page{
+      slices{
+        ...onproduct_list_with_cta{
+          variation{
+            ...ondefault-slice{
+              primary{
+                ...primaryFields
+              }
+              items{
+                productLink{
+                  ...productLinkFields
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }`
+
+  //This query gets product data for home-page
+  export const productListProductPageGraphQuery = `{
+    product-page{
+      slices{
+        ...onproduct_list_with_cta{
+          variation{
+            ...ondefault-slice{
+              primary{
+                ...primaryFields
+              }
+              items{
+                productLink{
+                  ...productLinkFields
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }`

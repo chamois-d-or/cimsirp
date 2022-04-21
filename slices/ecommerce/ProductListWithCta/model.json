@@ -39,13 +39,6 @@
         }
       },
       "items": {
-        "topProduct": {
-          "type": "IntegrationFields",
-          "config": {
-            "catalog": "cimsirp--products",
-            "label": "Top Product"
-          }
-        },
         "productLink": {
           "config": {
             "label": "Product Link",
@@ -85,13 +78,6 @@
         }
       },
       "items": {
-        "topProduct": {
-          "type": "IntegrationFields",
-          "config": {
-            "catalog": "cimsirp--custom_products",
-            "label": "Top Product"
-          }
-        },
         "productLink": {
           "config": {
             "label": "Product Link",

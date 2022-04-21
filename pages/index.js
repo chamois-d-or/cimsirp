@@ -6,7 +6,7 @@ import { components as marketingComponents } from '../slices/marketing/index'
 import { components as navigationComponents } from '../slices/navigation/index'
 
 // Menu graphQuery
-import { menuGraphQuery } from '../tools/graphQueries'
+import { menuGraphQuery, productListGraphQuery } from '../tools/graphQueries'
 import Layout from "../components/Layout"
 
 const __allComponents = {  ...ecommerceComponents, ...marketingComponents, ...navigationComponents }
@@ -24,13 +24,38 @@ export default function Home({doc, menu, footer, locale, locales}) {
 export async function getStaticProps({previewData, locale, locales}) {
   const client = createClient( previewData )
 
-  //querying page
+  //Querying page
   const document = (await client.getSingle('home-page', { lang: locale }).catch(e => {
     return null
   }));
   if (!document) {
     return {
       notFound: true,
+    }
+  }
+
+  //Querying linked product data through GraphQuery
+  const productListData = (await client.getSingle("home-page",  {lang: locale, 'graphQuery': productListGraphQuery }).catch(e => {
+    return {}
+  }));
+
+  //Incorporating new slices with linked product data in existing slice array
+  let index=0
+  const docWithProductLists = {
+    ...document,
+    data : {
+      ...document.data,
+      slices: document?.data?.slices?.map(slice => {
+        if(slice.slice_type === "product_list_with_cta"){
+          index ++
+          return {
+            ...productListData?.data?.slices[index-1]
+          }
+        }
+        return {
+          ...slice
+        }
+      })
     }
   }
 
@@ -46,7 +71,7 @@ export async function getStaticProps({previewData, locale, locales}) {
 
   return {
     props:{
-      doc: document,
+      doc: docWithProductLists,
       menu: menu,
       locale: locale,
       locales: locales,

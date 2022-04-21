@@ -14,7 +14,7 @@ import { components as navigationComponents } from '../../slices/navigation/inde
 const __allComponents = {  ...ecommerceComponents, ...marketingComponents, ...navigationComponents }
 
 // Menu graphQuery
-import { menuGraphQuery } from '../../tools/graphQueries'
+import { menuGraphQuery, productListProductPageGraphQuery } from '../../tools/graphQueries'
 
 // Prismic Helpers
 import * as prismicH from '@prismicio/helpers'
@@ -52,6 +52,31 @@ export async function getStaticProps({params, previewData, locale, locales}) {
     }
   }
 
+  //Querying linked product data through GraphQuery
+  const productListData = (await client.getByUID("product-page",params.uid ,{lang: locale, 'graphQuery': productListProductPageGraphQuery }).catch(e => {
+    return {}
+  }));
+
+  //Incorporating new slices with linked product data in existing slice array
+  let index=0
+  const docWithProductLists = {
+    ...document,
+    data : {
+      ...document.data,
+      slices: document?.data?.slices?.map(slice => {
+        if(slice.slice_type === "product_list_with_cta"){
+          index ++
+          return {
+            ...productListData?.data?.slices[index-1]
+          }
+        }
+        return {
+          ...slice
+        }
+      })
+    }
+  }
+
   //Querying the Menu here so that it can be previewed at the same time as the page (in a release)
   const menu = (await client.getSingle("menu",  {lang: locale, 'graphQuery': menuGraphQuery }).catch(e => {
     return {}
@@ -64,7 +89,7 @@ export async function getStaticProps({params, previewData, locale, locales}) {
 
   return {
     props:{
-      doc: document,
+      doc: docWithProductLists,
       menu: menu,
       locale: locale,
       locales: locales,

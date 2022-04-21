@@ -14,24 +14,24 @@ const ProductListWithCta = ({ slice }) => (
         </div>
 
         <div className="mt-6 grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 md:grid-cols-4 md:gap-y-0 lg:gap-x-8">
-          {slice.items.map((product) => (
-          product.topProduct ?
-            <div key={product.topProduct.id} className="group relative">
+          {slice.items.map((item) => (
+          item.productLink ?
+            <div key={item.productLink?.data?.product.id} className="group relative">
               <div className="w-full h-56 bg-gray-200 rounded-md overflow-hidden group-hover:opacity-75 lg:h-72 xl:h-80">
                 <img
-                  src={product.topProduct.imageSrc}
-                  alt={product.topProduct.imageAlt}
+                  src={item.productLink?.data?.product.imageSrc}
+                  alt={item.productLink?.data?.product.imageAlt}
                   className="w-full h-full object-center object-cover"
                 />
               </div>
               <h3 className="mt-4 text-sm text-gray-700">
-                <a href={product.productLink.url}>
+                <a href={item.productLink?.url}>
                   <span className="absolute inset-0" />
-                  {product.topProduct.name}
+                  {item.productLink?.data?.product.name}
                 </a>
               </h3>
-              <p className="mt-1 text-sm text-gray-500">{product.topProduct.color}</p>
-              <p className="mt-1 text-sm font-medium text-gray-900">{product.topProduct.price}</p>
+              <p className="mt-1 text-sm text-gray-500">{item.productLink?.data?.product.color}</p>
+              <p className="mt-1 text-sm font-medium text-gray-900">{item.productLink?.data?.product.price}</p>
             </div>
           : <p> No Integration Field set up </p>
           ))}
