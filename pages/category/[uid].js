@@ -4,7 +4,7 @@ import { createClient } from '../../prismicio'
 // Import Slicezone, Layout and Loader components
 import { SliceZone } from "@prismicio/react"
 import Layout from "../../components/Layout"
-import ProductLayout from '../../components/ProductLayout'
+import CategoryLayout from '../../components/CategoryLayout'
 import Loader from '../../components/Loader'
 
 // Import Slices components
@@ -14,7 +14,7 @@ import { components as navigationComponents } from '../../slices/navigation/inde
 const __allComponents = {  ...ecommerceComponents, ...marketingComponents, ...navigationComponents }
 
 // Menu graphQuery
-import { menuGraphQuery, productListProductPageGraphQuery } from '../../tools/graphQueries'
+import { menuGraphQuery, categoryPageGraphQuery } from '../../tools/graphQueries'
 
 // Prismic Helpers
 import * as prismicH from '@prismicio/helpers'
@@ -22,7 +22,7 @@ import * as prismicH from '@prismicio/helpers'
 // NextJS router to manage fallback loader
 import { useRouter } from 'next/router'
 
-export default function ProductPage({doc, menu, footer, locale, locales}) {
+export default function CategoryPage({doc, menu, footer, locale, locales}) {
   const router = useRouter()
   if (router.isFallback) {
     return <Loader />
@@ -30,7 +30,7 @@ export default function ProductPage({doc, menu, footer, locale, locales}) {
   return (
     <div>
       <Layout menu={menu} footer={footer} title={doc.data.meta_title} currentLocale={locale} locales={locales} alt_versions={doc.alternate_languages}>
-        <ProductLayout productData={doc.data} />
+        <CategoryLayout products={doc.data.products} title={doc.data.meta_title}/>
         <SliceZone slices={doc.data.slices} components={__allComponents} />
       </Layout>
     </div>
@@ -42,7 +42,7 @@ export async function getStaticProps({params, previewData, locale, locales}) {
   const client = createClient( previewData )
 
   //querying page
-  const document = (await client.getByUID('product-page',params.uid ,{ lang: locale }).catch(e => {
+  const document = (await client.getByUID('category-page',params.uid ,{ lang: locale, 'graphQuery': categoryPageGraphQuery  }).catch(e => {
     return null
   }));
   //returning a 404 if page does not exist
@@ -51,32 +51,7 @@ export async function getStaticProps({params, previewData, locale, locales}) {
       notFound: true,
     }
   }
-
-  //Querying linked product data through GraphQuery
-  const productListData = (await client.getByUID("product-page",params.uid ,{lang: locale, 'graphQuery': productListProductPageGraphQuery }).catch(e => {
-    return {}
-  }));
-
-  //Incorporating new slices with linked product data in existing slice array
-  let index=0
-  const docWithProductLists = {
-    ...document,
-    data : {
-      ...document.data,
-      slices: document?.data?.slices?.map(slice => {
-        if(slice.slice_type === "product_list_with_cta"){
-          index ++
-          return {
-            ...productListData?.data?.slices[index-1]
-          }
-        }
-        return {
-          ...slice
-        }
-      })
-    }
-  }
-
+  
   //Querying the Menu here so that it can be previewed at the same time as the page (in a release)
   const menu = (await client.getSingle("menu",  {lang: locale, 'graphQuery': menuGraphQuery }).catch(e => {
     return {}
@@ -89,7 +64,7 @@ export async function getStaticProps({params, previewData, locale, locales}) {
 
   return {
     props:{
-      doc: docWithProductLists,
+      doc: document,
       menu: menu,
       locale: locale,
       locales: locales,
@@ -101,7 +76,7 @@ export async function getStaticProps({params, previewData, locale, locales}) {
 //Define Paths
 export async function getStaticPaths() {
   const client = createClient()
-  const documents = await client.getAllByType('product-page',{ lang: '*' })
+  const documents = await client.getAllByType('category-page',{ lang: '*' })
 
   return {
     paths: documents.map((doc) => prismicH.asLink(doc)),

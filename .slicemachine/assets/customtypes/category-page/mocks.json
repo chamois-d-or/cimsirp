@@ -1,0 +1,33 @@
+{
+  "id": "68291aa7-fa81-42f2-9103-62eda7ab6433",
+  "uid": "voluptatibus-rerum-et",
+  "type": "category-page",
+  "data": {
+    "products": [
+      {
+        "product": {
+          "link_type": "Web",
+          "url": "http://twitter.com"
+        }
+      },
+      {
+        "product": {
+          "link_type": "Web",
+          "url": "https://slicemachine.dev"
+        }
+      },
+      {
+        "product": {
+          "link_type": "Web",
+          "url": "https://slicemachine.dev"
+        }
+      },
+      {
+        "product": {
+          "link_type": "Web",
+          "url": "http://twitter.com"
+        }
+      }
+    ]
+  }
+}

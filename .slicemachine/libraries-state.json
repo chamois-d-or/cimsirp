@@ -3660,12 +3660,12 @@
                   "type": "Text"
                 },
                 "subSectionLink": {
+                  "type": "Link",
                   "config": {
                     "label": "Sub Section Link",
-                    "customtypes": [],
-                    "select": "document"
-                  },
-                  "type": "Link"
+                    "placeholder": "",
+                    "select": null
+                  }
                 }
               },
               "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
@@ -3679,36 +3679,29 @@
             "slice_type": "menu_sub_tab",
             "items": [
               {
-                "subSectionTitle": "scale viral markets",
+                "subSectionTitle": "grow one-to-one experiences",
+                "subSectionLink": {
+                  "link_type": "Web",
+                  "url": "https://prismic.io"
+                }
+              },
+              {
+                "subSectionTitle": "brand magnetic convergence",
                 "subSectionLink": {
                   "link_type": "Web",
                   "url": "http://twitter.com"
                 }
               },
               {
-                "subSectionTitle": "recontextualize back-end ROI",
+                "subSectionTitle": "engage clicks-and-mortar systems",
                 "subSectionLink": {
                   "link_type": "Web",
-                  "url": "http://google.com"
-                }
-              },
-              {
-                "subSectionTitle": "leverage proactive communities",
-                "subSectionLink": {
-                  "link_type": "Web",
-                  "url": "http://google.com"
-                }
-              },
-              {
-                "subSectionTitle": "repurpose visionary e-business",
-                "subSectionLink": {
-                  "link_type": "Web",
-                  "url": "https://prismic.io"
+                  "url": "http://twitter.com"
                 }
               }
             ],
             "primary": {
-              "sectionTitle": "synthesize dot-com solutions"
+              "sectionTitle": "benchmark granular markets"
             }
           }
         },

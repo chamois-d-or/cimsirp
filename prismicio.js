@@ -16,18 +16,10 @@ export function linkResolver(doc) {
       return `/blog/${doc.uid}`
     case 'product-page':
       return `/product/${doc.uid}`
+      case 'category-page':
+        return `/category/${doc.uid}`
     default:
       return '/'
-  }
-}
-
-//Adding support for same page anchors that can be passed through an external Link Field like this : https://#anchor
-export function externalLinkResolver(url) {
-  if (url && /^https?:\/\/#/.test(url)) {
-    return url.slice(url.indexOf('#'))
-  }
-  else{
-    return url
   }
 }
 
@@ -59,18 +51,14 @@ export const routeResolver = {
       "type":"product-page",
       "path":"/:lang/product/:uid"
     },
-    // {
-    //   "type":"category-page",
-    //   "path":"/:lang/category/:uid"
-    // },
+    {
+      "type":"category-page",
+      "path":"/:lang/category/:uid"
+    },
     {
       "type":"blog-page",
       "path":"/:lang/blog/:uid"
     },
-    // {
-    //   "type":"marketing-homepage",
-    //   "path":"/marketing/"
-    // },
     // {
     //   "type":"uniform-page",
     //   "path":"/uniform/:uid"

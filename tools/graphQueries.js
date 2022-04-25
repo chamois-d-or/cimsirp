@@ -44,6 +44,16 @@ export const menuGraphQuery = `{
                 }
               }
             }
+            ...oncustomProducts{
+              primary{
+                ...primaryFields
+              }
+              items{
+                productLink{
+                  ...productLinkFields
+                }
+              }
+            }
           }
         }
       }
@@ -69,5 +79,19 @@ export const menuGraphQuery = `{
           }
         }
       }
+    }
+  }`
+
+  //This query gets product data for home-page
+  export const categoryPageGraphQuery = `{
+    category-page{
+      meta_title
+      meta_description
+      products{
+        product{
+          product
+        }
+      }
+      slices
     }
   }`

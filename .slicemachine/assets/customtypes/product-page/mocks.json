@@ -1,0 +1,88 @@
+{
+  "id": "3dae92b5-2a2c-413b-892a-4738ad90803c",
+  "uid": "quam-nisi-eum",
+  "type": "product-page",
+  "data": {
+    "description": [
+      {
+        "type": "paragraph",
+        "text": "Elit commodo dolor est duis.",
+        "spans": []
+      }
+    ],
+    "highlights": [
+      {
+        "type": "paragraph",
+        "text": "Reprehenderit cupidatat velit id eiusmod sit.",
+        "spans": []
+      }
+    ],
+    "details": [
+      {
+        "type": "paragraph",
+        "text": "Duis cupidatat ad minim incididunt nulla consequat elit voluptate fugiat.",
+        "spans": []
+      }
+    ],
+    "meta_title": "evolve impactful technologies",
+    "meta_description": "unleash holistic relationships",
+    "canonicalLink": {
+      "link_type": "Web",
+      "url": "https://slicemachine.dev"
+    },
+    "social_cards": [
+      {
+        "social_card_image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1491975474562-1f4e30bc9468?w=900&h=500&fit=crop"
+        },
+        "social_card_title": "deliver back-end eyeballs",
+        "social_card_description": "exploit compelling mindshare"
+      },
+      {
+        "social_card_image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1607582278043-57198ac8da43?w=900&h=500&fit=crop"
+        },
+        "social_card_title": "incubate cutting-edge relationships",
+        "social_card_description": "visualize cross-media applications"
+      },
+      {
+        "social_card_image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1601933973783-43cf8a7d4c5f?w=900&h=500&fit=crop"
+        },
+        "social_card_title": "synergize efficient vortals",
+        "social_card_description": "incentivize sexy channels"
+      },
+      {
+        "social_card_image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": "Placeholder image",
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=900&h=500&fit=crop"
+        },
+        "social_card_title": "reintermediate enterprise technologies",
+        "social_card_description": "incentivize vertical e-business"
+      }
+    ]
+  }
+}

@@ -25,7 +25,11 @@
           "blocks": 1
         }
       }
-    }
+    },
+    "category-page": {
+      "products": {}
+    },
+    "product-page": {}
   },
   "slices/ecommerce": {
     "PromoSectionWithBackgroundImage": {},
@@ -70,6 +74,13 @@
             }
           }
         }
+      }
+    }
+  },
+  "slices/navigation": {
+    "MenuSubTab": {
+      "default-slice": {
+        "items": {}
       }
     }
   }
