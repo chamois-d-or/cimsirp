@@ -1,7 +1,8 @@
 name: Push slices to prod
-on: push
-  branches:
-      - staging
+on: 
+  push:
+    branches:
+        - staging
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
