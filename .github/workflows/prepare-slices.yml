@@ -16,7 +16,7 @@ jobs:
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: Push slices to prod repo
         env: # Or as an environment variable
-        super_secret: ${{ secrets.CT_API_KEY }}
+          CT_API_KEY: ${{ secrets.CT_API_KEY }}
         run: |
           ls ${{ github.workspace }}
           npm i glob
