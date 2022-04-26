@@ -122,24 +122,9 @@
             "thumbnails": []
           },
           "type": "Image"
-        },
-        "personalisationid": {
-          "config": {
-            "label": "personalisationid",
-            "placeholder": "For personalization use only"
-          },
-          "type": "Text"
-        },
-        "intent": {
-          "type": "IntegrationFields",
-          "config": {
-            "catalog": "demo-sm-next-ecom--intents",
-            "label": "Uniform Intent"
-          }
         }
       },
-      "items": {},
-      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+      "items": {}
     }
   ]
 }
