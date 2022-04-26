@@ -20,5 +20,6 @@ jobs:
         run: |
           ls ${{ github.workspace }}
           npm i glob
+          npm i dotenv
           node tools/pushSlices.js
       - run: echo "🍏 This job's status is ${{ job.status }}."
