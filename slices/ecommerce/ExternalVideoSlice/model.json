@@ -14,7 +14,7 @@
         "video": {
           "type": "IntegrationFields",
           "config": {
-            "catalog": "demo-sm-next-ecom--external_videos",
+            "catalog": "cimsirp--external_videos",
             "label": "Video"
           }
         }
