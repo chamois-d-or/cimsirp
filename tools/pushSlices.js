@@ -2,6 +2,9 @@ const glob = require("glob");
 const fetch = require('node-fetch')
 var fs = require('fs');
 
+pushSlices("cimsirp", process.env.CT_API_KEY)
+pushCT("cimsirp", process.env.CT_API_KEY)
+
 module.exports = {
   pushSlices : async function pushSlices(repositoryName, ctKey) {
     const slicesJsons = glob.sync('./slices/**/model.json')
