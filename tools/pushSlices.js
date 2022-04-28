@@ -2,18 +2,17 @@ const glob = require("glob");
 const fetch = require('node-fetch')
 var fs = require('fs');
 
-//const ctKey = process.env.CT_API_KEY
-const ctKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoibWFjaGluZTJtYWNoaW5lIiwiZGJpZCI6ImNpbXNpcnAtNmQzOGQ2MmQtYWU5OC00MmNhLTlkYzItNzgyM2ZlYzZhYTRmXzQiLCJkYXRlIjoxNjUwOTc3NzQyLCJkb21haW4iOiJjaW1zaXJwIiwiaWF0IjoxNjUwOTc3NzQyfQ.xv0yZIzypJiOr78QYMAz_crIbpQpMiUQlF0CErQsJZk"
+pushSlices("cimsirp", process.env.CT_API_KEY)
+pushCT("cimsirp", process.env.CT_API_KEY)
 
-pushSlices()
-pushCT()
-
-async function pushSlices() {
+module.exports = {
+  pushSlices : async function pushSlices(repositoryName, ctKey) {
     const slicesJsons = glob.sync('./slices/**/model.json')
 
     console.log("slices in the github code", slicesJsons)
     slicesJsons.forEach(function(slice,index){
-        const sliceObject = JSON.parse(fs.readFileSync(slicesJsons[index], 'utf8'));
+        const slice_file_edited = fs.readFileSync(slicesJsons[index], 'utf8').replace(/"catalog": "cimsirp/g, '"catalog": "' + repositoryName)
+        const sliceObject = JSON.parse(slice_file_edited);
         sliceObject.variations.forEach(function(variation,index2){
           if(fs.existsSync(slice.split('model.json')[0]+sliceObject.variations[index2].id+'/preview.png')){
             sliceObject.variations[index2].imageUrl = "https://raw.githubusercontent.com/chamois-d-or/cimsirp/staging/slices/"+slice.split("/")[2]+"/"+sliceObject.name+"/"+sliceObject.variations[index2].id+"/preview.png"
@@ -22,14 +21,33 @@ async function pushSlices() {
             sliceObject.variations[index2].imageUrl = "https://raw.githubusercontent.com/chamois-d-or/cimsirp/staging/.slicemachine/assets/slices/"+slice.split("/")[2]+"/"+sliceObject.name+"/"+sliceObject.variations[index2].id+"/preview.png"
           }
         })
-        const updateResponse = updateSlice(sliceObject)
-        if(updateResponse === "422"){
-          insertSlice(sliceObject)
-        }
+        const updateResponse = updateSlice(sliceObject, repositoryName, ctKey)
+        updateResponse.then(updateResponse => {
+          console.log(updateResponse)
+          if(updateResponse === 422){
+            insertSlice(sliceObject, repositoryName, ctKey)
+          }
+        })
     })
+  },
+  pushCT : async function pushCT(repositoryName, ctKey) {
+    const CTJsons = glob.sync('./customtypes/**/index.json')
+  
+    console.log("CT in the github code", CTJsons)
+    CTJsons.forEach(function(customType){
+        const ct_file_edited = fs.readFileSync(customType, 'utf8').replace(/"catalog": "cimsirp/g, '"catalog": "' + repositoryName)
+        const customTypeObject = JSON.parse(ct_file_edited);
+        const updateResponse = updateCT(customTypeObject, repositoryName, ctKey)
+        updateResponse.then(updateResponse => {
+          if(updateResponse === 422){
+            insertCT(customTypeObject, repositoryName, ctKey)
+          }
+        })
+    })
+  }
 }
 
-async function updateSlice(sliceObject) {
+async function updateSlice(sliceObject, repositoryName, ctKey) {
 
   const URL = `https://customtypes.prismic.io/slices/update`
 
@@ -37,7 +55,7 @@ async function updateSlice(sliceObject) {
     endpoint: URL,
     method: "POST", //or POST
     headers: {
-      "repository": "cimsirp",
+      "repository": repositoryName,
       "Authorization": ctKey,
       "Accept": "application/json",
       "Content-Type": "application/json",
@@ -50,14 +68,14 @@ async function updateSlice(sliceObject) {
       return response.status
     })
 
-    console.log("updating slice in remote prismic repo: " + sliceObject.id + " response: " + data)
+    console.log("updating slice in "+repositoryName+": " + sliceObject.id + " response: " + data)
     return data
   } catch (error) {
     throw new Error(error)
   }
 }
 
-async function insertSlice(sliceObject) {
+async function insertSlice(sliceObject, repositoryName, ctKey) {
 
   const URL = `https://customtypes.prismic.io/slices/insert`
 
@@ -65,7 +83,7 @@ async function insertSlice(sliceObject) {
     endpoint: URL,
     method: "POST", //or POST
     headers: {
-      "repository": "cimsirp",
+      "repository": repositoryName,
       "Authorization": ctKey,
       "Accept": "application/json",
       "Content-Type": "application/json",
@@ -78,28 +96,14 @@ async function insertSlice(sliceObject) {
       return response.status
     })
 
-    console.log("adding slice to remote prismic repo: " + sliceObject.id + " response: " + data)
+    console.log("adding slice "+repositoryName+": " + sliceObject.id + " response: " + data)
     return data
   } catch (error) {
     throw new Error(error)
   }
 }
 
-
-async function pushCT() {
-  const CTJsons = glob.sync('./customtypes/**/index.json')
-
-  console.log("CT in the github code", CTJsons)
-  CTJsons.forEach(function(customType){
-      const customTypeObject = JSON.parse(fs.readFileSync(customType, 'utf8'));
-      const updateResponse = updateCT(customTypeObject)
-      if(updateResponse === "422"){
-        insertCT(customTypeObject)
-      }
-  })
-}
-
-async function updateCT(customTypeObject) {
+async function updateCT(customTypeObject, repositoryName, ctKey) {
 
   const URL = `https://customtypes.prismic.io/customtypes/update`
 
@@ -107,7 +111,7 @@ async function updateCT(customTypeObject) {
     endpoint: URL,
     method: "POST", //or POST
     headers: {
-      "repository": "cimsirp",
+      "repository": repositoryName,
       "Authorization": ctKey,
       "Accept": "application/json",
       "Content-Type": "application/json",
@@ -120,14 +124,14 @@ async function updateCT(customTypeObject) {
       return response.status
     })
 
-    console.log("updating CT in remote prismic repo: " + customTypeObject.id + " response: " + data)
+    console.log("updating CT "+repositoryName+": " + customTypeObject.id + " response: " + data)
     return data
   } catch (error) {
     throw new Error(error)
   }
 }
 
-async function insertCT(customTypeObject) {
+async function insertCT(customTypeObject, repositoryName, ctKey) {
 
   const URL = `https://customtypes.prismic.io/customtypes/insert`
 
@@ -135,7 +139,7 @@ async function insertCT(customTypeObject) {
     endpoint: URL,
     method: "POST", //or POST
     headers: {
-      "repository": "cimsirp",
+      "repository": repositoryName,
       "Authorization": ctKey,
       "Accept": "application/json",
       "Content-Type": "application/json",
@@ -148,7 +152,7 @@ async function insertCT(customTypeObject) {
       return response.status
     })
 
-    console.log("inserting CT in remote prismic repo: " + customTypeObject.id + " response: " + data)
+    console.log("inserting CT "+repositoryName+": " + customTypeObject.id + " response: " + data)
     return data
   } catch (error) {
     throw new Error(error)
