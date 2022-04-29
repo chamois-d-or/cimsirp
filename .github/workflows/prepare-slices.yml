@@ -20,5 +20,5 @@ jobs:
         run: |
           ls ${{ github.workspace }}
           npm i glob
-          node tools/pushSlices.js
+          node tools/updateSlicesAndCT.js
       - run: echo "🍏 This job's status is ${{ job.status }}."
