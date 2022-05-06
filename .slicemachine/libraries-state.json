@@ -2505,7 +2505,10 @@
                     "label": "Description",
                     "placeholder": "A nice description of your feature",
                     "allowTargetBlank": true,
-                    "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,embed,list-item,o-list-item,rtl,image"
+                    "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,embed,list-item,o-list-item,rtl,image",
+                    "labels": [
+                      "footnote"
+                    ]
                   }
                 }
               },
@@ -2843,6 +2846,146 @@
             "path": "/Users/alexandrec/Documents/PoC/Current/cimsirp/.slicemachine/assets/slices/marketing/ContentSectionTwoColumnsWithImage/default-slice/preview.png",
             "width": 800,
             "height": 822
+          }
+        }
+      },
+      "faq_side_by_side": {
+        "library": "slices/marketing",
+        "id": "faq_side_by_side",
+        "name": "FaqSideBySide",
+        "description": "FaqSideBySide",
+        "model": {
+          "id": "faq_side_by_side",
+          "type": "SharedSlice",
+          "name": "FaqSideBySide",
+          "description": "FaqSideBySide",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "FaqSideBySide",
+              "primary": {
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Title",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  }
+                }
+              },
+              "items": {
+                "question": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Question",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  }
+                },
+                "answer": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Answer",
+                    "placeholder": "",
+                    "allowTargetBlank": true,
+                    "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+                  }
+                },
+                "anchorId": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Anchor Id",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "faq_side_by_side",
+            "items": [
+              {
+                "question": [
+                  {
+                    "type": "paragraph",
+                    "text": "Ex fugiat ad voluptate adipisicing ea enim ex laborum aliqua mollit ipsum.",
+                    "spans": []
+                  }
+                ],
+                "answer": [
+                  {
+                    "type": "paragraph",
+                    "text": "Nostrud culpa labore elit sunt. Mollit duis esse commodo.",
+                    "spans": []
+                  }
+                ],
+                "anchorId": "facilitate B2C solutions"
+              },
+              {
+                "question": [
+                  {
+                    "type": "paragraph",
+                    "text": "Pariatur non enim anim ullamco nostrud nostrud.",
+                    "spans": []
+                  }
+                ],
+                "answer": [
+                  {
+                    "type": "paragraph",
+                    "text": "Sit minim dolor ad labore ut pariatur aliquip exercitation ex ut id aute.",
+                    "spans": []
+                  }
+                ],
+                "anchorId": "mesh cross-media content"
+              },
+              {
+                "question": [
+                  {
+                    "type": "paragraph",
+                    "text": "Do cillum sit eu quis. Aliqua sunt mollit excepteur. Lorem eiusmod magna consequat adipisicing adipisicing excepteur nisi nisi ex dolore dolor quis.",
+                    "spans": []
+                  }
+                ],
+                "answer": [
+                  {
+                    "type": "paragraph",
+                    "text": "Est exercitation officia commodo voluptate qui eiusmod consectetur eiusmod dolore excepteur minim aliquip enim non. Excepteur et nostrud aute nulla sit amet occaecat ad ex id dolor cupidatat irure voluptate.",
+                    "spans": []
+                  }
+                ],
+                "anchorId": "drive efficient relationships"
+              }
+            ],
+            "primary": {
+              "title": [
+                {
+                  "type": "heading1",
+                  "text": "Target scalable eyeballs",
+                  "spans": []
+                }
+              ]
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {
+          "default": {
+            "path": "/Users/alexandrec/Documents/PoC/Current/cimsirp/.slicemachine/assets/slices/marketing/FaqSideBySide/default/preview.png",
+            "width": 800,
+            "height": 527
           }
         }
       },

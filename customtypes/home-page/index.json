@@ -2,7 +2,7 @@
   "id": "home-page",
   "label": "Home Page",
   "repeatable": false,
-  "status": false,
+  "status": true,
   "json": {
     "Main": {
       "slices": {
