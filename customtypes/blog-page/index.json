@@ -58,6 +58,9 @@
             },
             "content_section_two_columns_with_image": {
               "type": "SharedSlice"
+            },
+            "faq_side_by_side": {
+              "type": "SharedSlice"
             }
           }
         }
