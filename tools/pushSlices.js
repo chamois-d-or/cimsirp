@@ -20,7 +20,6 @@ module.exports = {
         })
         const updateResponse = updateSlice(sliceObject, repositoryName, ctKey)
         updateResponse.then(updateResponse => {
-          console.log(updateResponse)
           if(updateResponse === 422){
             insertSlice(sliceObject, repositoryName, ctKey)
           }

@@ -6,6 +6,7 @@ import ContentSectionCentered from './ContentSectionCentered';
 import ContentSectionCenteredEmbed from './ContentSectionCenteredEmbed';
 import ContentSectionCenteredImage from './ContentSectionCenteredImage';
 import ContentSectionTwoColumnsWithImage from './ContentSectionTwoColumnsWithImage';
+import FaqSideBySide from './FaqSideBySide';
 import FeaturedSectionCentered22 from './FeaturedSectionCentered22';
 import HeaderSectionSimpleCentered from './HeaderSectionSimpleCentered';
 import HeroSectionSplit from './HeroSectionSplit';
@@ -19,6 +20,7 @@ export {
 	ContentSectionCenteredEmbed,
 	ContentSectionCenteredImage,
 	ContentSectionTwoColumnsWithImage,
+	FaqSideBySide,
 	FeaturedSectionCentered22,
 	HeaderSectionSimpleCentered,
 	HeroSectionSplit,
@@ -33,6 +35,7 @@ export const components = {
 	content_section_centered_embed: ContentSectionCenteredEmbed,
 	content_section_centered_image: ContentSectionCenteredImage,
 	content_section_two_columns_with_image: ContentSectionTwoColumnsWithImage,
+	faq_side_by_side: FaqSideBySide,
 	featured_section_centered22: FeaturedSectionCentered22,
 	header_section_simple_centered: HeaderSectionSimpleCentered,
 	hero_section_split: HeroSectionSplit,
