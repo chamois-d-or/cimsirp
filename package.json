@@ -10,6 +10,7 @@
     "slicemachine": "start-slicemachine"
   },
   "dependencies": {
+    "@growthbook/growthbook": "^0.18.0",
     "@headlessui/react": "^1.5.0",
     "@heroicons/react": "^1.0.6",
     "@prismicio/client": "^6.4.1",

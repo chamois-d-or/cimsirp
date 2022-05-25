@@ -95,3 +95,21 @@ export const menuGraphQuery = `{
       slices
     }
   }`
+
+  //This query gets product data for home-page
+  export const AbTestingBlogPageGraphQuery = `{
+    blog-page{
+      title
+      category
+      description
+      variants{
+        bucket
+        variant{
+          ...on blog-page {
+            ...blog-pageFields
+          }
+        }
+      }
+      slices
+    }
+  }`
