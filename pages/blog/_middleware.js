@@ -44,8 +44,10 @@ export async function middleware(req) {
     const url = req.nextUrl.clone();
     const bucket = growthbook.getFeatureValue(endUrl, "default");
     if(bucket !== "default"){
-      url.pathname = `${url.pathname}\/${bucket}`
+      //adding locale because of NEXTJS issue
+      url.pathname = `${url.locale}${url.pathname}/${bucket}`
     }
+    console.log(url)
     res = NextResponse.rewrite(url);
 
     // Add the cookies if it's not there
