@@ -118,6 +118,39 @@
           "label": "Social Cards - Facebook & Twitter"
         }
       }
+    },
+    "Variants": {
+      "variants": {
+        "type": "Group",
+        "config": {
+          "label": "Variants",
+          "fields": {
+            "variant": {
+              "type": "Link",
+              "config": {
+                "label": "Variant",
+                "select": "document"
+              }
+            },
+            "bucket": {
+              "type": "Text",
+              "config": {
+                "label": "Bucket",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
+      "isVariant": {
+        "type": "Boolean",
+        "config": {
+          "label": "Is Variant",
+          "placeholder_false": "false",
+          "placeholder_true": "true",
+          "default_value": false
+        }
+      }
     }
   }
 }

@@ -1,20 +1,20 @@
 //Import Prismic configuration
-import { createClient } from '../../prismicio'
+import { createClient } from '../../../prismicio'
 
 // Import Slicezone, Layout and Loader components
 import { SliceZone } from "@prismicio/react"
-import Layout from "../../components/Layout"
-import BlogLayout from '../../components/BlogLayout'
-import Loader from '../../components/Loader'
+import Layout from "../../../components/Layout"
+import BlogLayout from '../../../components/BlogLayout'
+import Loader from '../../../components/Loader'
 
 // Import Slices components
-import { components as ecommerceComponents } from '../../slices/ecommerce/index'
-import { components as marketingComponents } from '../../slices/marketing/index'
-import { components as navigationComponents } from '../../slices/navigation/index'
+import { components as ecommerceComponents } from '../../../slices/ecommerce/index'
+import { components as marketingComponents } from '../../../slices/marketing/index'
+import { components as navigationComponents } from '../../../slices/navigation/index'
 const __allComponents = {  ...ecommerceComponents, ...marketingComponents, ...navigationComponents }
 
 // Menu graphQuery
-import { menuGraphQuery } from '../../tools/graphQueries'
+import { menuGraphQuery, AbTestingBlogPageGraphQuery } from '../../../tools/graphQueries'
 
 // Prismic Helpers
 import * as prismicH from '@prismicio/helpers'
@@ -29,9 +29,9 @@ export default function BlogPage({doc, menu, footer, locale, locales}) {
   }
   return (
     <div>
-      <Layout menu={menu} footer={footer} title={doc.data.meta_title} currentLocale={locale} locales={locales} alt_versions={doc.alternate_languages}>
+      <Layout menu={menu} footer={footer} title={doc.data?.meta_title} currentLocale={locale} locales={locales} alt_versions={doc.alternate_languages}>
         <BlogLayout data={doc.data}>
-          <SliceZone slices={doc.data.slices} components={__allComponents} />
+          <SliceZone slices={doc.data?.slices} components={__allComponents} />
         </BlogLayout>
       </Layout>
     </div>
@@ -43,7 +43,7 @@ export async function getStaticProps({params, previewData, locale, locales}) {
   const client = createClient( previewData )
 
   //querying page
-  const document = (await client.getByUID('blog-page',params.uid ,{ lang: locale }).catch(e => {
+  const document = (await client.getByUID('blog-page',params.uid ,{ lang: locale, 'graphQuery': AbTestingBlogPageGraphQuery }).catch(e => {
     return null
   }));
   //returning a 404 if page does not exist
@@ -52,6 +52,7 @@ export async function getStaticProps({params, previewData, locale, locales}) {
       notFound: true,
     }
   }
+  const variantDocument = document.data.variants.filter((item)=> item.bucket === params.variant)[0]?.variant
 
   //Querying the Menu here so that it can be previewed at the same time as the page (in a release)
   const menu = (await client.getSingle("menu",  {lang: locale, 'graphQuery': menuGraphQuery }).catch(e => {
@@ -65,7 +66,7 @@ export async function getStaticProps({params, previewData, locale, locales}) {
 
   return {
     props:{
-      doc: document,
+      doc: variantDocument? variantDocument : document,
       menu: menu,
       locale: locale,
       locales: locales,
@@ -78,11 +79,17 @@ export async function getStaticProps({params, previewData, locale, locales}) {
 export async function getStaticPaths() {
   const client = createClient()
   const documents = await client.getAllByType('blog-page',{ lang: '*' })
-  const mainDocument = documents.filter((doc)=> !doc.data.isVariant)
-
+  const mainDocuments = documents.filter((doc)=> !doc.data.isVariant)
+  const variantDocuments = []
+  mainDocuments.forEach((doc) =>{
+    if(doc.data.variants.length >0){
+        const variantsLinks = doc.data.variants.filter(variant => variant.variant)
+        variantsLinks.forEach(variantLink => variantDocuments.push({...doc , ...variantLink}))
+    }
+  })
 
   return {
-    paths: mainDocument.map((doc) => prismicH.asLink(doc)),
+    paths: variantDocuments.map((variant) => prismicH.asLink(variant)+'/'+variant.bucket),
     fallback: true,
   }
 }
