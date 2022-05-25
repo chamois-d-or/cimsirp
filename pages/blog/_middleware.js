@@ -46,16 +46,13 @@ export async function middleware(req) {
     if(bucket !== "default"){
       //adding locale because of NEXTJS issue
       url.pathname = `${url.locale}${url.pathname}/${bucket}`
+      res = NextResponse.rewrite(url);
     }
-    console.log(url)
-    res = NextResponse.rewrite(url);
 
     // Add the cookies if it's not there
     if (!req.cookies[COOKIE]) {
       res.cookie(COOKIE, visitor_id)
     }
-  
-    return res
   }
-  return NextResponse.next()
+  return res
 }
