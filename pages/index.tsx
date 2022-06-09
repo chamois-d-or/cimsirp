@@ -11,7 +11,29 @@ import Layout from "../components/Layout"
 
 const __allComponents = {  ...ecommerceComponents, ...marketingComponents, ...navigationComponents }
 
-export default function Home({doc, menu, footer, locale, locales}) {
+//Types
+import { GetStaticProps } from 'next/types'
+import { FooterDocument, HomePageDocument, MenuDocument, MenuTabDocument } from "../types.generated"
+
+export type ContentRelationshipWithMenuDocument = {
+  menuTab : MenuTabDocument
+}
+
+export type MenuDocumentWithLinkedMenuTabs = MenuDocument & {
+  data:{
+    menuTabs : ContentRelationshipWithMenuDocument[]
+  }
+}
+
+type Props = {
+  doc: HomePageDocument,
+  menu: MenuDocumentWithLinkedMenuTabs,
+  locale: string | undefined,
+  locales: string[] | undefined,
+  footer: FooterDocument,
+};
+
+export default function Home({doc, menu, footer, locale, locales} : Props) {
   return (
     <div>
       <Layout menu={menu} footer={footer} title={doc.data.meta_title} currentLocale={locale} locales={locales} alt_versions={doc.alternate_languages}>
@@ -21,11 +43,11 @@ export default function Home({doc, menu, footer, locale, locales}) {
   )
 }
 
-export async function getStaticProps({previewData, locale, locales}) {
+export const getStaticProps: GetStaticProps= async({previewData, locale, locales}) =>{
   const client = createClient( previewData )
 
   //Querying page
-  const document = (await client.getSingle('home-page', { lang: locale }).catch(e => {
+  const document  = (await client.getSingle<HomePageDocument>('home-page', { lang: locale }).catch(e => {
     return null
   }));
   if (!document) {
@@ -35,8 +57,8 @@ export async function getStaticProps({previewData, locale, locales}) {
   }
 
   //Querying linked product data through GraphQuery
-  const productListData = (await client.getSingle("home-page",  {lang: locale, 'graphQuery': productListGraphQuery }).catch(e => {
-    return {}
+  const productListData = (await client.getSingle<HomePageDocument>("home-page",  {lang: locale, 'graphQuery': productListGraphQuery }).catch(e => {
+    return null
   }));
 
   //Incorporating new slices with linked product data in existing slice array
@@ -60,13 +82,13 @@ export async function getStaticProps({previewData, locale, locales}) {
   }
 
   //Querying the Menu here so that it can be previewed at the same time as the page (in a release)
-  const menu = (await client.getSingle("menu",  {lang: locale, 'graphQuery': menuGraphQuery }).catch(e => {
-    return {}
+  const menu : MenuDocumentWithLinkedMenuTabs = (await client.getSingle("menu",  {lang: locale, 'graphQuery': menuGraphQuery }).catch(e => {
+    return null as any
   }));
 
   //Querying the Footer here so that it can be previewed at the same time as the page (in a release)
-  const footer = (await client.getSingle("footer",  {lang: locale }).catch(e => {
-    return {}
+  const footer : FooterDocument = (await client.getSingle("footer",  {lang: locale }).catch(e => {
+    return null as any
   }));
 
   return {

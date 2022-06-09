@@ -21,8 +21,19 @@ import * as prismicH from '@prismicio/helpers'
 
 // NextJS router to manage fallback loader
 import { useRouter } from 'next/router'
+import { FooterDocument, MenuDocument, ProductPageDocument } from '../../types.generated'
+import { GetStaticProps } from 'next/types'
+import { MenuDocumentWithLinkedMenuTabs } from '..'
 
-export default function ProductPage({doc, menu, footer, locale, locales}) {
+type Props = {
+  doc: ProductPageDocument,
+  menu: MenuDocumentWithLinkedMenuTabs,
+  locale: string | undefined,
+  locales: string[] | undefined,
+  footer: FooterDocument,
+};
+
+export default function ProductPage({doc, menu, footer, locale, locales} : Props) {
   const router = useRouter()
   if (router.isFallback) {
     return <Loader />
@@ -38,11 +49,18 @@ export default function ProductPage({doc, menu, footer, locale, locales}) {
 }
 
 //Get page content including menu and footer
-export async function getStaticProps({params, previewData, locale, locales}) {
+export const getStaticProps : GetStaticProps = async({params, previewData, locale, locales}) => {
   const client = createClient( previewData )
 
+  //checking uid is a string
+  if (typeof params?.uid !== "string") {
+    return {
+      notFound: true,
+    }
+  }
+
   //querying page
-  const document = (await client.getByUID('product-page',params.uid ,{ lang: locale }).catch(e => {
+  const document = (await client.getByUID<ProductPageDocument>('product-page',params.uid ,{ lang: locale }).catch(e => {
     return null
   }));
   //returning a 404 if page does not exist
@@ -53,8 +71,8 @@ export async function getStaticProps({params, previewData, locale, locales}) {
   }
 
   //Querying linked product data through GraphQuery
-  const productListData = (await client.getByUID("product-page",params.uid ,{lang: locale, 'graphQuery': productListProductPageGraphQuery }).catch(e => {
-    return {}
+  const productListData = (await client.getByUID<ProductPageDocument>("product-page",params.uid ,{lang: locale, 'graphQuery': productListProductPageGraphQuery }).catch(e => {
+    return null
   }));
 
   //Incorporating new slices with linked product data in existing slice array

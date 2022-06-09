@@ -21,8 +21,19 @@ import * as prismicH from '@prismicio/helpers'
 
 // NextJS router to manage fallback loader
 import { useRouter } from 'next/router'
+import { BlogPageDocument, BlogPageDocumentDataVariantsItem, FooterDocument } from '../../../types.generated'
+import { MenuDocumentWithLinkedMenuTabs } from '../..'
+import { GetStaticProps } from 'next'
 
-export default function BlogPage({doc, menu, footer, locale, locales}) {
+type Props = {
+  doc: BlogPageDocument,
+  menu: MenuDocumentWithLinkedMenuTabs,
+  locale: string | undefined,
+  locales: string[] | undefined,
+  footer: FooterDocument,
+};
+
+export default function BlogPage({doc, menu, footer, locale, locales} : Props) {
   const router = useRouter()
   if (router.isFallback) {
     return <Loader />
@@ -39,11 +50,18 @@ export default function BlogPage({doc, menu, footer, locale, locales}) {
 }
 
 //Get page content including menu and footer
-export async function getStaticProps({params, previewData, locale, locales}) {
+export const getStaticProps : GetStaticProps = async({params, previewData, locale, locales}) =>{
   const client = createClient( previewData )
 
+  //checking uid is a string
+  if (typeof params?.uid !== "string") {
+    return {
+      notFound: true,
+    }
+  }
+
   //querying page
-  const document = (await client.getByUID('blog-page',params.uid ,{ lang: locale, 'graphQuery': AbTestingBlogPageGraphQuery }).catch(e => {
+  const document = (await client.getByUID<BlogPageDocument>('blog-page',params.uid ,{ lang: locale, 'graphQuery': AbTestingBlogPageGraphQuery }).catch(e => {
     return null
   }));
   //returning a 404 if page does not exist
@@ -78,9 +96,9 @@ export async function getStaticProps({params, previewData, locale, locales}) {
 //Define Paths
 export async function getStaticPaths() {
   const client = createClient()
-  const documents = await client.getAllByType('blog-page',{ lang: '*' })
+  const documents = await client.getAllByType<BlogPageDocument>('blog-page',{ lang: '*' })
   const mainDocuments = documents.filter((doc)=> !doc.data.isVariant)
-  const variantDocuments = []
+  const variantDocuments : Array<BlogPageDocument & BlogPageDocumentDataVariantsItem> = []
   mainDocuments.forEach((doc) =>{
     if(doc.data.variants.length >0){
         const variantsLinks = doc.data.variants.filter(variant => variant.variant)

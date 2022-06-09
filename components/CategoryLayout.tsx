@@ -4,6 +4,7 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { ChevronDownIcon, FilterIcon, MinusSmIcon, PlusSmIcon, ViewGridIcon } from '@heroicons/react/solid'
 
 import { PrismicLink } from '@prismicio/react'
+import { ContentRelationshipWithProductPageDocument } from "../pages/category/[uid]";
 
 const sortOptions = [
   { name: 'Most Popular', href: '#', current: true },
@@ -57,11 +58,11 @@ const filters = [
   },
 ]
 
-function classNames(...classes) {
+function classNames(...classes : string[]) {
   return classes.filter(Boolean).join(' ')
 }
 
-const CategoryLayout = ({ products=[], title="New Arrivals" }) => {
+const CategoryLayout = ({ products=[], title="New Arrivals" } : {products: ContentRelationshipWithProductPageDocument[], title : string| null}) => {
   return (
     <div className="bg-white">
     {/* {productData?.product ? */}
@@ -191,22 +192,22 @@ const CategoryLayout = ({ products=[], title="New Arrivals" }) => {
 
         {/* Product grid */}
         <div className="grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:col-span-3 lg:gap-x-8">
-          {products.map((item) => (
+          {products.filter(x => x!== null).map((item) => (
             <PrismicLink
               document={item.product}
-              key={item.product.data.product.id}
+              key={item.product.data.product?.id}
               className="group text-sm"
             >
               <div className="w-full aspect-w-1 aspect-h-1 rounded-lg overflow-hidden bg-gray-100 group-hover:opacity-75">
                 <img
-                  src={item.product.data.product.imageSrc}
-                  alt={item.product.data.product.imageAlt}
+                  src={item.product.data.product?.imageSrc}
+                  alt={item.product.data.product?.imageAlt}
                   className="w-full h-full object-center object-cover"
                 />
               </div>
-              <h3 className="mt-4 font-medium text-gray-900">{item.product.data.product.name}</h3>
-              <p className="text-gray-500 italic">{item.product.data.product.color}</p>
-              <p className="mt-2 font-medium text-gray-900">{item.product.data.product.price}</p>
+              <h3 className="mt-4 font-medium text-gray-900">{item.product.data.product?.name}</h3>
+              <p className="text-gray-500 italic">{item.product.data.product?.color}</p>
+              <p className="mt-2 font-medium text-gray-900">{item.product.data.product?.price}</p>
             </PrismicLink>
           ))}
         </div>

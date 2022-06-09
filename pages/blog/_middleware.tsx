@@ -6,7 +6,7 @@ const FEATURES_ENDPOINT = 'https://cdn.growthbook.io/api/features/key_prod_2f258
 const COOKIE = 'visitor_id'
 
 // Fetch features from GrowthBook API and cache in memory
-let features = null;
+let features :any = null;
 let lastFetch = 0;
 async function getFeatures() {
   if (Date.now() - lastFetch > 5000) {
@@ -21,7 +21,7 @@ async function getFeatures() {
   return features || {};
 }
 
-export async function middleware(req) {
+export async function middleware(req : NextRequest) {
 
   let visitor_id = req.cookies[COOKIE] || crypto.randomUUID()
 
@@ -35,7 +35,8 @@ export async function middleware(req) {
   });
 
   const pathname = req.nextUrl.pathname;
-  const endUrl = /[^/]*$/.exec(pathname)[0];
+  const endUrls = /[^/]*$/.exec(pathname);
+  const endUrl= endUrls ? endUrls[0] : "";
 
   // Pick which page to render depending on a feature flag
   let res = NextResponse.next();

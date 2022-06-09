@@ -1,7 +1,13 @@
 import React from "react";
 import { PrismicRichText } from "@prismicio/react";
+import { BlogPageDocument } from "../types.generated";
 
-const BlogLayout = ({ children, data }) => {
+type Props ={
+  children : JSX.Element[] | JSX.Element,
+  data : BlogPageDocument["data"]
+}
+
+const BlogLayout = ({ children, data } : Props) => {
   return (
   <div className="relative py-16 bg-white overflow-hidden">
     <div className="hidden lg:block lg:absolute lg:inset-y-0 lg:h-full lg:w-full">

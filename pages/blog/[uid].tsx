@@ -1,27 +1,39 @@
 //Import Prismic configuration
-import { createClient } from '../prismicio'
+import { createClient } from '../../prismicio'
 
 // Import Slicezone, Layout and Loader components
 import { SliceZone } from "@prismicio/react"
-import Layout from "../components/Layout"
-import Loader from '../components/Loader'
+import Layout from "../../components/Layout"
+import BlogLayout from '../../components/BlogLayout'
+import Loader from '../../components/Loader'
 
 // Import Slices components
-import { components as ecommerceComponents } from '../slices/ecommerce/index'
-import { components as marketingComponents } from '../slices/marketing/index'
-import { components as navigationComponents } from '../slices/navigation/index'
+import { components as ecommerceComponents } from '../../slices/ecommerce/index'
+import { components as marketingComponents } from '../../slices/marketing/index'
+import { components as navigationComponents } from '../../slices/navigation/index'
 const __allComponents = {  ...ecommerceComponents, ...marketingComponents, ...navigationComponents }
 
 // Menu graphQuery
-import { menuGraphQuery } from '../tools/graphQueries'
+import { menuGraphQuery } from '../../tools/graphQueries'
 
 // Prismic Helpers
 import * as prismicH from '@prismicio/helpers'
 
 // NextJS router to manage fallback loader
 import { useRouter } from 'next/router'
+import { MenuDocumentWithLinkedMenuTabs } from '..'
+import { BlogPageDocument, FooterDocument } from '../../types.generated'
+import { GetStaticProps } from 'next'
 
-export default function Page({doc, menu, footer, locale, locales}) {
+type Props = {
+  doc: BlogPageDocument,
+  menu: MenuDocumentWithLinkedMenuTabs,
+  locale: string | undefined,
+  locales: string[] | undefined,
+  footer: FooterDocument,
+};
+
+export default function BlogPage({doc, menu, footer, locale, locales}: Props) {
   const router = useRouter()
   if (router.isFallback) {
     return <Loader />
@@ -29,18 +41,27 @@ export default function Page({doc, menu, footer, locale, locales}) {
   return (
     <div>
       <Layout menu={menu} footer={footer} title={doc.data.meta_title} currentLocale={locale} locales={locales} alt_versions={doc.alternate_languages}>
-        <SliceZone slices={doc.data.slices} components={__allComponents} />
+        <BlogLayout data={doc.data}>
+          <SliceZone slices={doc.data.slices} components={__allComponents} />
+        </BlogLayout>
       </Layout>
     </div>
   )
 }
 
 //Get page content including menu and footer
-export async function getStaticProps({params, previewData, locale, locales}) {
+export const getStaticProps : GetStaticProps = async({params, previewData, locale, locales}) =>{
   const client = createClient( previewData )
 
+  //checking uid is a string
+  if (typeof params?.uid !== "string") {
+    return {
+      notFound: true,
+    }
+  }
+  
   //querying page
-  const document = (await client.getByUID('page',params.uid ,{ lang: locale }).catch(e => {
+  const document = (await client.getByUID('blog-page',params.uid ,{ lang: locale }).catch(e => {
     return null
   }));
   //returning a 404 if page does not exist
@@ -74,10 +95,12 @@ export async function getStaticProps({params, previewData, locale, locales}) {
 //Define Paths
 export async function getStaticPaths() {
   const client = createClient()
-  const documents = await client.getAllByType('page',{ lang: '*' })
+  const documents = await client.getAllByType('blog-page',{ lang: '*' })
+  const mainDocument = documents.filter((doc)=> !doc.data.isVariant)
+
 
   return {
-    paths: documents.map((doc) => prismicH.asLink(doc)),
+    paths: mainDocument.map((doc) => prismicH.asLink(doc)),
     fallback: true,
   }
 }

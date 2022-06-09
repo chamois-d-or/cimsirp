@@ -1,8 +1,13 @@
 import React from "react";
 import { PrismicRichText } from "@prismicio/react";
 import * as prismicH from "@prismicio/helpers"
+import { ProductPageDocument } from "../types.generated";
 
-const ProductLayout = ({ productData={} }) => {
+type Props={
+  productData : ProductPageDocument["data"] | null
+}
+
+const ProductLayout = ({ productData=null } : Props) => {
   return (
     <div className="bg-white">
     {productData?.product ?

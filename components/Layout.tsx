@@ -2,8 +2,24 @@ import React from "react";
 import Head from "next/head";
 import Header from './Header';
 import Footer from './Footer';
+import type { FooterDocument } from "../types.generated";
+import { MenuDocumentWithLinkedMenuTabs } from "../pages";
 
-const Layout = ({ children, menu, title, footer, currentLocale, locales, alt_versions }) => {
+type Props = {
+  children: JSX.Element[] | JSX.Element,
+  menu: MenuDocumentWithLinkedMenuTabs | null,
+  title: string | null,
+  currentLocale: string | undefined,
+  locales: string[] | undefined,
+  footer: FooterDocument | null,
+  alt_versions: Array<{
+    id : string,
+    type: string,
+    lang : string
+  }>
+};
+
+const Layout = ({ children, menu, title, footer, currentLocale, locales, alt_versions }: Props) => {
   return (
     <div>
       <Head>
