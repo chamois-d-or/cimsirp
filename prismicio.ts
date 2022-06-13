@@ -26,7 +26,7 @@ export const linkResolver :LinkResolverFunction = (doc: FilledLinkToDocumentFiel
   }
 }
 
-type ConfigProps={
+type ConfigProps = prismic.ClientConfig &{
   previewData?: PreviewData,
   req?: NextApiRequest
 }
