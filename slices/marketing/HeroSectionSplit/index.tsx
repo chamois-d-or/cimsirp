@@ -1,8 +1,9 @@
 import React from 'react'
-import { PrismicRichText } from '@prismicio/react'
+import { PrismicLink, PrismicRichText } from '@prismicio/react'
 import * as prismicH from '@prismicio/helpers'
+import { HeroSectionSplitSlice } from '../../../types.generated'
 
-const HeroSectionSplit = ({ slice }) => (
+const HeroSectionSplit = ({ slice } : {slice :HeroSectionSplitSlice}) => (
   <section>
     <div className="relative bg-gray-50">
       <main className="lg:relative">
@@ -17,20 +18,20 @@ const HeroSectionSplit = ({ slice }) => (
             </p>
             <div className="mt-10 sm:flex sm:justify-center lg:justify-start">
               <div className="rounded-md shadow">
-                <a
-                  href={slice.primary.cta1.url}
+                <PrismicLink
+                  field={slice.primary.cta1}
                   className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"
                 >
                   {slice.primary.ctaLabel1}
-                </a>
+                </PrismicLink>
               </div>
               <div className="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">
-                <a
-                  href={slice.primary.cta2.url}
+                <PrismicLink
+                  field={slice.primary.cta2}
                   className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-600 bg-white hover:bg-gray-50 md:py-4 md:text-lg md:px-10"
                 >
                   {slice.primary.ctaLabel2}
-                </a>
+                </PrismicLink>
               </div>
             </div>
           </div>
@@ -38,8 +39,8 @@ const HeroSectionSplit = ({ slice }) => (
           <div className= "relative w-full h-64 sm:h-72 md:h-96 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 lg:h-full">
             <img
               className="absolute inset-0 w-full h-full object-cover"
-              src={slice.primary.image.url}
-              alt={slice.primary.image.alt}
+              src={slice.primary.image.url!}
+              alt={slice.primary.image.alt!}
             />
           </div>
       </main>

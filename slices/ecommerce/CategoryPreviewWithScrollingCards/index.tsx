@@ -1,13 +1,14 @@
 import React from 'react'
 import { PrismicRichText, PrismicLink } from '@prismicio/react'
+import { CategoryPreviewWithScrollingCardsSlice } from '../../../types.generated'
 
-const CategoryPreviewWithScrollingCards = ({ slice }) => (
+const CategoryPreviewWithScrollingCards = ({ slice } : {slice : CategoryPreviewWithScrollingCardsSlice}) => (
   <section>
     <div className="bg-white">
       <div className="py-16 sm:py-24 xl:max-w-7xl xl:mx-auto xl:px-8">
         <div className="px-4 sm:px-6 sm:flex sm:items-center sm:justify-between lg:px-8 xl:px-0">
           <h2 className="text-2xl font-extrabold tracking-tight text-gray-900"><PrismicRichText field={slice.primary.title} /></h2>
-          <PrismicLink document={slice.primary.CTALink} className="hidden text-sm font-semibold text-indigo-600 hover:text-indigo-500 sm:block">
+          <PrismicLink field={slice.primary.CTALink} className="hidden text-sm font-semibold text-indigo-600 hover:text-indigo-500 sm:block">
             <span >{ slice.primary.CTA }</span><span aria-hidden="true"> &rarr;</span>
           </PrismicLink>
         </div>
@@ -19,14 +20,14 @@ const CategoryPreviewWithScrollingCards = ({ slice }) => (
                 {slice.items.map((item) => (
                   <PrismicLink
                     key={item.title}
-                    document={item.link}
+                    field={item.link}
                     className="relative w-56 h-80 rounded-lg p-6 flex flex-col overflow-hidden hover:opacity-75 xl:w-auto"
                   >
                     <span aria-hidden="true" className="absolute inset-0">
                     <picture>
                       <img
-                        src={item.image.url}
-                        alt={item.image.alt}
+                        src={item.image.url!}
+                        alt={item.image.alt!}
                         className="w-full h-full object-center object-cover"
                       />
                     </picture>
@@ -44,7 +45,7 @@ const CategoryPreviewWithScrollingCards = ({ slice }) => (
         </div>
 
         <div className="mt-6 px-4 sm:hidden">
-          <PrismicLink document={slice.primary.CTALink} className="block text-sm font-semibold text-indigo-600 hover:text-indigo-500">
+          <PrismicLink field={slice.primary.CTALink} className="block text-sm font-semibold text-indigo-600 hover:text-indigo-500">
           <span >{ slice.primary.CTA }</span><span aria-hidden="true"> &rarr;</span>
           </PrismicLink>
         </div>

@@ -1,8 +1,9 @@
 import React from 'react'
 import { PrismicRichText } from '@prismicio/react'
 import * as prismicH from '@prismicio/helpers'
+import { ProductFeaturesWithWideImagesSlice } from '../../../types.generated'
 
-const ProductFeaturesWithWideImages = ({ slice }) => (
+const ProductFeaturesWithWideImages = ({ slice } : {slice : ProductFeaturesWithWideImagesSlice}) => (
   <section>
     <div className="bg-white">
       <div className="max-w-7xl mx-auto py-8 sm:py-12 sm:px-2 lg:px-4">
@@ -14,9 +15,9 @@ const ProductFeaturesWithWideImages = ({ slice }) => (
           </div>
 
           <div className="space-y-16 pt-10 mt-10 border-t border-gray-200 sm:pt-16 sm:mt-16">
-            {slice.items.map((item) => (
+            {slice.items.map((item, index) => (
               <div
-                key={item.title}
+                key={index}
                 className="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:gap-x-8 lg:items-center"
               >
                 <div className="mt-6 lg:mt-0 lg:col-span-5 xl:col-span-4">
@@ -27,12 +28,12 @@ const ProductFeaturesWithWideImages = ({ slice }) => (
                   <div className="aspect-w-5 aspect-h-2 rounded-lg bg-gray-100 overflow-hidden">
                   <picture>
                     {item.image.mobile
-                      ? <source srcSet={item.image.mobile.url} media="(max-width: 640px)"/>
+                      ? <source srcSet={item.image.mobile.url!} media="(max-width: 640px)"/>
                       : <div/>
                     }
                     <img
-                      src={item.image.url}
-                      alt={item.image.alt}
+                      src={item.image.url!}
+                      alt={item.image.alt!}
                       className="object-center object-cover"
                     />
                   </picture>

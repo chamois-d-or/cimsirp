@@ -2,8 +2,9 @@ import React from 'react'
 import { PrismicRichText } from '@prismicio/react'
 
 import { CameraIcon } from '@heroicons/react/solid'
+import { ContentSectionTwoColumnsWithImageSlice } from '../../../types.generated'
 
-const ContentSectionTwoColumnsWithImage = ({ slice }) => (
+const ContentSectionTwoColumnsWithImage = ({ slice } : {slice : ContentSectionTwoColumnsWithImageSlice}) => (
   <section> 
     <div className="bg-white overflow-hidden">
       <div className="relative max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
@@ -45,8 +46,8 @@ const ContentSectionTwoColumnsWithImage = ({ slice }) => (
                 <div className="aspect-w-12 aspect-h-7 lg:aspect-none">
                   <img
                     className="rounded-lg shadow-lg object-cover object-center"
-                    src={slice.primary.image.url}
-                    alt={slice.primary.image.alt}
+                    src={slice.primary.image.url!}
+                    alt={slice.primary.image.alt!}
                     width={1184}
                     height={1376}
                   />

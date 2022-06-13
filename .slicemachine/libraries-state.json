@@ -232,7 +232,7 @@
         },
         "meta": {
           "fileName": "index",
-          "extension": "js"
+          "extension": "tsx"
         },
         "screenshotPaths": {
           "default-slice": {
@@ -389,7 +389,7 @@
         },
         "meta": {
           "fileName": "index",
-          "extension": "js"
+          "extension": "tsx"
         },
         "screenshotPaths": {
           "default-slice": {
@@ -529,7 +529,7 @@
         },
         "meta": {
           "fileName": "index",
-          "extension": "js"
+          "extension": "tsx"
         },
         "screenshotPaths": {
           "default-slice": {
@@ -581,7 +581,7 @@
         },
         "meta": {
           "fileName": "index",
-          "extension": "js"
+          "extension": "tsx"
         },
         "screenshotPaths": {
           "default-slice": {
@@ -768,7 +768,7 @@
         },
         "meta": {
           "fileName": "index",
-          "extension": "js"
+          "extension": "tsx"
         },
         "screenshotPaths": {
           "default-slice": {
@@ -1108,7 +1108,7 @@
         },
         "meta": {
           "fileName": "index",
-          "extension": "js"
+          "extension": "tsx"
         },
         "screenshotPaths": {
           "default-slice": {
@@ -1157,7 +1157,9 @@
                 "link": {
                   "config": {
                     "label": "Link",
-                    "customtypes": [],
+                    "customtypes": [
+                      "product-page"
+                    ],
                     "select": "document"
                   },
                   "type": "Link"
@@ -1201,6 +1203,16 @@
                     "allowTargetBlank": true,
                     "single": "paragraph"
                   }
+                },
+                "link": {
+                  "type": "Link",
+                  "config": {
+                    "label": "Link",
+                    "select": "document",
+                    "customtypes": [
+                      "product-page"
+                    ]
+                  }
                 }
               },
               "items": {
@@ -1228,7 +1240,25 @@
               {
                 "productLink": {
                   "link_type": "Web",
-                  "url": "https://prismic.io"
+                  "url": "http://twitter.com"
+                }
+              },
+              {
+                "productLink": {
+                  "link_type": "Web",
+                  "url": "https://slicemachine.dev"
+                }
+              },
+              {
+                "productLink": {
+                  "link_type": "Web",
+                  "url": "http://google.com"
+                }
+              },
+              {
+                "productLink": {
+                  "link_type": "Web",
+                  "url": "http://twitter.com"
                 }
               },
               {
@@ -1242,20 +1272,20 @@
               "title": [
                 {
                   "type": "heading1",
-                  "text": "Redefine world-class portals",
+                  "text": "Embrace dynamic content",
                   "spans": []
                 }
               ],
               "description": [
                 {
                   "type": "paragraph",
-                  "text": "Sint cillum do laborum. Consequat Lorem non ea pariatur.",
+                  "text": "Velit commodo mollit deserunt. Cillum non officia tempor nisi consectetur pariatur excepteur. Sit nisi labore tempor fugiat nostrud anim.",
                   "spans": []
                 }
               ],
               "link": {
                 "link_type": "Web",
-                "url": "http://google.com"
+                "url": "https://prismic.io"
               }
             }
           },
@@ -1279,13 +1309,7 @@
               {
                 "productLink": {
                   "link_type": "Web",
-                  "url": "https://prismic.io"
-                }
-              },
-              {
-                "productLink": {
-                  "link_type": "Web",
-                  "url": "https://prismic.io"
+                  "url": "https://slicemachine.dev"
                 }
               }
             ],
@@ -1293,23 +1317,27 @@
               "title": [
                 {
                   "type": "heading1",
-                  "text": "Maximize cutting-edge e-commerce",
+                  "text": "Reintermediate bricks-and-clicks blockchains",
                   "spans": []
                 }
               ],
               "description": [
                 {
                   "type": "paragraph",
-                  "text": "Sint ullamco duis veniam magna dolore elit enim.",
+                  "text": "Tempor quis est qui ea sint excepteur consequat duis incididunt id nostrud.",
                   "spans": []
                 }
-              ]
+              ],
+              "link": {
+                "link_type": "Web",
+                "url": "http://twitter.com"
+              }
             }
           }
         },
         "meta": {
           "fileName": "index",
-          "extension": "js"
+          "extension": "tsx"
         },
         "screenshotPaths": {
           "default-slice": {
@@ -1470,7 +1498,7 @@
         },
         "meta": {
           "fileName": "index",
-          "extension": "js"
+          "extension": "tsx"
         },
         "screenshotPaths": {
           "default-slice": {
@@ -1688,7 +1716,7 @@
         },
         "meta": {
           "fileName": "index",
-          "extension": "js"
+          "extension": "tsx"
         },
         "screenshotPaths": {
           "default-slice": {
@@ -1917,7 +1945,7 @@
         },
         "meta": {
           "fileName": "index",
-          "extension": "js"
+          "extension": "tsx"
         },
         "screenshotPaths": {
           "default-slice": {
@@ -2079,7 +2107,7 @@
         },
         "meta": {
           "fileName": "index",
-          "extension": "js"
+          "extension": "tsx"
         },
         "screenshotPaths": {
           "default-slice": {
@@ -2292,7 +2320,7 @@
         },
         "meta": {
           "fileName": "index",
-          "extension": "js"
+          "extension": "tsx"
         },
         "screenshotPaths": {
           "default-slice": {
@@ -2471,7 +2499,7 @@
         },
         "meta": {
           "fileName": "index",
-          "extension": "js"
+          "extension": "tsx"
         },
         "screenshotPaths": {
           "default-slice": {
@@ -2561,7 +2589,7 @@
         },
         "meta": {
           "fileName": "index",
-          "extension": "js"
+          "extension": "tsx"
         },
         "screenshotPaths": {
           "default-slice": {
@@ -2627,7 +2655,7 @@
         },
         "meta": {
           "fileName": "index",
-          "extension": "js"
+          "extension": "tsx"
         },
         "screenshotPaths": {
           "default-slice": {
@@ -2706,7 +2734,7 @@
         },
         "meta": {
           "fileName": "index",
-          "extension": "js"
+          "extension": "tsx"
         },
         "screenshotPaths": {
           "default-slice": {
@@ -2839,7 +2867,7 @@
         },
         "meta": {
           "fileName": "index",
-          "extension": "js"
+          "extension": "tsx"
         },
         "screenshotPaths": {
           "default-slice": {
@@ -2972,7 +3000,7 @@
         },
         "meta": {
           "fileName": "index",
-          "extension": "js"
+          "extension": "tsx"
         },
         "screenshotPaths": {
           "default": {
@@ -3154,7 +3182,7 @@
         },
         "meta": {
           "fileName": "index",
-          "extension": "js"
+          "extension": "tsx"
         },
         "screenshotPaths": {
           "default-slice": {
@@ -3232,7 +3260,7 @@
         },
         "meta": {
           "fileName": "index",
-          "extension": "js"
+          "extension": "tsx"
         },
         "screenshotPaths": {
           "default-slice": {
@@ -3384,7 +3412,7 @@
         },
         "meta": {
           "fileName": "index",
-          "extension": "js"
+          "extension": "tsx"
         },
         "screenshotPaths": {
           "default-slice": {
@@ -3428,7 +3456,7 @@
         },
         "meta": {
           "fileName": "index",
-          "extension": "js"
+          "extension": "tsx"
         },
         "screenshotPaths": {
           "default-slice": {
@@ -3641,7 +3669,7 @@
         },
         "meta": {
           "fileName": "index",
-          "extension": "js"
+          "extension": "tsx"
         },
         "screenshotPaths": {
           "default-slice": {

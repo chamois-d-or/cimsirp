@@ -1,7 +1,8 @@
 import React from 'react'
 import { PrismicRichText } from '@prismicio/react'
+import { FeaturedSectionCentered22Slice } from '../../../types.generated'
 
-const FeaturedSectionCentered22 = ({ slice }) => (
+const FeaturedSectionCentered22 = ({ slice }: {slice:FeaturedSectionCentered22Slice}) => (
   <section>
     <div className="py-12 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -17,14 +18,14 @@ const FeaturedSectionCentered22 = ({ slice }) => (
 
         <div className="mt-10">
           <dl className="space-y-10 md:space-y-0 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
-            {slice.items?.map((feature) => (
-              <div key={feature.title} className="relative">
+            {slice.items?.map((feature, index) => (
+              <div key={index} className="relative">
                 <dt>
                   <div className="absolute flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
                     <img
                       className="h-6 w-6" aria-hidden="true"
-                      src={feature.icon.url}
-                      alt={feature.icon.alt}
+                      src={feature.icon.url!}
+                      alt={feature.icon.alt!}
                       width={6}
                       height={6}
                     />

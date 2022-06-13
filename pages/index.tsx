@@ -14,6 +14,7 @@ const __allComponents = {  ...ecommerceComponents, ...marketingComponents, ...na
 //Types
 import { GetStaticProps } from 'next/types'
 import { FooterDocument, HomePageDocument, MenuDocument, MenuTabDocument } from "../types.generated"
+import { ProductListWithCtaSliceWithLinkedProductPages } from "../slices/ecommerce/ProductListWithCta"
 
 export type ContentRelationshipWithMenuDocument = {
   menuTab : MenuTabDocument
@@ -25,8 +26,15 @@ export type MenuDocumentWithLinkedMenuTabs = MenuDocument & {
   }
 }
 
+type HomePageDocumentWithLinkedProductPages={
+  data: { 
+    slices: Array<
+    ProductListWithCtaSliceWithLinkedProductPages | HomePageDocument["data"]["slices"][number]>
+  }
+} & HomePageDocument
+
 type Props = {
-  doc: HomePageDocument,
+  doc: HomePageDocumentWithLinkedProductPages,
   menu: MenuDocumentWithLinkedMenuTabs,
   locale: string | undefined,
   locales: string[] | undefined,
@@ -44,7 +52,7 @@ export default function Home({doc, menu, footer, locale, locales} : Props) {
 }
 
 export const getStaticProps: GetStaticProps= async({previewData, locale, locales}) =>{
-  const client = createClient( previewData )
+  const client = createClient( {previewData} )
 
   //Querying page
   const document  = (await client.getSingle<HomePageDocument>('home-page', { lang: locale }).catch(e => {
@@ -57,7 +65,7 @@ export const getStaticProps: GetStaticProps= async({previewData, locale, locales
   }
 
   //Querying linked product data through GraphQuery
-  const productListData = (await client.getSingle<HomePageDocument>("home-page",  {lang: locale, 'graphQuery': productListGraphQuery }).catch(e => {
+  const productListData = (await client.getSingle<HomePageDocumentWithLinkedProductPages>("home-page",  {lang: locale, 'graphQuery': productListGraphQuery }).catch(e => {
     return null
   }));
 

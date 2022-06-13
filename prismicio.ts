@@ -1,12 +1,15 @@
 import * as prismic from '@prismicio/client'
+import { LinkResolverFunction } from '@prismicio/helpers'
 import { enableAutoPreviews } from '@prismicio/next'
+import { FilledLinkToDocumentField } from '@prismicio/types'
+import { NextApiRequest, PreviewData } from 'next/types'
 import sm from './sm.json'
 
 export const endpoint = process.env.API_ENDPOINT ? process.env.API_ENDPOINT : sm.apiEndpoint
 export const repositoryName = prismic.getRepositoryName(endpoint)
 
 //Update the Link Resolver to match your project's route structure
-export function linkResolver(doc) {
+export const linkResolver :LinkResolverFunction = (doc: FilledLinkToDocumentField) => {
   switch (doc.type) {
     case 'home-page':
       return `/`
@@ -23,8 +26,13 @@ export function linkResolver(doc) {
   }
 }
 
+type ConfigProps={
+  previewData?: PreviewData,
+  req?: NextApiRequest
+}
+
 // This factory function allows smooth preview setup
-export function createClient(config = {}) {
+export function createClient(config : ConfigProps = {}) {
   const client = prismic.createClient(endpoint, {
     ...config,
     routes: routeResolver.routes
@@ -67,8 +75,4 @@ export const routeResolver = {
       "type":"home-page",
       "path":"/:lang"
     },],
-  href: (type) => {
-    const route = routeResolver.routes.find(r => r.type === type);
-    return route && route.href;
-  }
 };

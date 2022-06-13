@@ -2,8 +2,9 @@ import React from 'react'
 import { PrismicRichText, PrismicLink } from '@prismicio/react'
 import { MailIcon, PhoneIcon } from '@heroicons/react/outline'
 import * as prismicH from '@prismicio/helpers'
+import { ContactSectionSplitTwoToneSlice } from '../../../types.generated'
 
-const ContactSectionSplitTwoTone = ({ slice }) => (
+const ContactSectionSplitTwoTone = ({ slice } : {slice: ContactSectionSplitTwoToneSlice}) => (
   <section>
     <div className="relative bg-white">
       <div className="absolute inset-0">
@@ -39,7 +40,7 @@ const ContactSectionSplitTwoTone = ({ slice }) => (
               </div>
               <div className="mt-6">
                 {prismicH.asText(slice.primary.careerText)+' '}
-                <PrismicLink document={slice.primary.careerLink} className="font-medium text-gray-700 underline">
+                <PrismicLink field={slice.primary.careerLink} className="font-medium text-gray-700 underline">
                   <span >{ slice.primary.CareerLinkText }</span>
                 </PrismicLink>
               </div>
@@ -51,16 +52,16 @@ const ContactSectionSplitTwoTone = ({ slice }) => (
             <form action="" method="" className="grid grid-cols-1 gap-y-6">
               { slice?.items?.map((item, i) => 
                 <div key={ item.field } >
-                  <label htmlFor={ item.field } className="sr-only">
+                  <label htmlFor={ item.field! } className="sr-only">
                   { item.field }
                   </label>
                   <input
                     type="text"
-                    name={ item.field }
-                    id={ item.field }
-                    autoComplete={ item.field }
+                    name={ item.field! }
+                    id={ item.field! }
+                    autoComplete={ item.field! }
                     className="block w-full shadow-sm py-3 px-4 placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500 border-gray-300 rounded-md"
-                    placeholder={ item.fieldPlaceholder }
+                    placeholder={ item.fieldPlaceholder! }
                   />
                 </div>)
               }

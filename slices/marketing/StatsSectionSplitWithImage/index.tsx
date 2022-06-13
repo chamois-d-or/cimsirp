@@ -1,14 +1,15 @@
 import React from 'react'
 import { PrismicRichText } from '@prismicio/react'
+import { StatsSectionSplitWithImageSlice } from '../../../types.generated'
 
-const StatsSectionSplitWithImage = ({ slice }) => (
+const StatsSectionSplitWithImage = ({ slice } : {slice : StatsSectionSplitWithImageSlice}) => (
   <section>
     <div className="relative bg-white">
       <div className="h-56 bg-indigo-600 sm:h-72 lg:absolute lg:left-0 lg:h-full lg:w-1/2">
         <img
           className="w-full h-full object-cover"
-          src={slice.primary.icon.url}
-          alt={slice.primary.icon.alt}
+          src={slice.primary.icon.url!}
+          alt={slice.primary.icon.alt!}
         />
       </div>
       <div className="relative max-w-7xl mx-auto px-4 py-8 sm:py-12 sm:px-6 lg:py-16">
@@ -17,8 +18,8 @@ const StatsSectionSplitWithImage = ({ slice }) => (
             <div className="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
                     <img
                       className="h-6 w-6" aria-hidden="true"
-                      src={slice.primary.icon.url}
-                      alt={slice.primary.icon.alt}
+                      src={slice.primary.icon.url!}
+                      alt={slice.primary.icon.alt!}
                     />
             </div>
           </div>

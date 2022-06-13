@@ -1,7 +1,8 @@
 import React from 'react'
 import { PrismicLink, PrismicRichText } from '@prismicio/react'
+import { PromoSectionWithBackgroundImageSlice } from '../../../types.generated'
 
-const PromoSectionWithBackgroundImage = ({ slice }) => (
+const PromoSectionWithBackgroundImage = ({ slice } : {slice: PromoSectionWithBackgroundImageSlice}) => (
   <section>
     <div className="bg-white">
       <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
@@ -16,8 +17,8 @@ const PromoSectionWithBackgroundImage = ({ slice }) => (
               />
               :
               <img
-                src={slice.primary.image.url}
-                alt={slice.primary.image.alt}
+                src={slice.primary.image.url!}
+                alt={slice.primary.image.alt!}
                 className="w-full h-full object-center object-cover"
               />
           }
@@ -43,14 +44,14 @@ const PromoSectionWithBackgroundImage = ({ slice }) => (
               {
                 slice.variation === "cameraInsurance"?
                 <PrismicLink
-                  document={slice.primary.link}
+                  field={slice.primary.link}
                   className="mt-8 w-full block bg-white border border-transparent rounded-md py-3 px-8 text-base font-medium text-gray-900 hover:bg-gray-100 sm:w-auto"
                 >
                   <span >Get Started Right Here</span>
                 </PrismicLink>
                 :
                 <PrismicLink
-                  document={slice.primary.link}
+                  field={slice.primary.link}
                   className="mt-8 w-full block bg-white border border-transparent rounded-md py-3 px-8 text-base font-medium text-gray-900 hover:bg-gray-100 sm:w-auto"
                 >
                   <span >{ slice.primary.linkLabel }</span>

@@ -2,8 +2,9 @@ import React from 'react'
 import { PrismicRichText } from '@prismicio/react';
 
 import { PieChart, Pie, ResponsiveContainer } from 'recharts';
+import { ChartSliceSlice } from '../../../types.generated';
 
-const ChartSlice = ({ slice }) => (
+const ChartSlice = ({ slice } : {slice : ChartSliceSlice}) => (
   <section>
     <div className="bg-white">
       <div className="mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">

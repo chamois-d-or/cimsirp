@@ -9,3 +9,7 @@ export type IntegrationFieldProducts = {
     imageSrc : string,
     imageAlt : string
 }
+
+export type IntegrationFieldExternalVideos = {
+    video_url : string,
+}

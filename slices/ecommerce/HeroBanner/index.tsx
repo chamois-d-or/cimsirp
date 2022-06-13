@@ -2,18 +2,18 @@ import React from 'react'
 import { PrismicLink } from '@prismicio/react'
 import { HeroBannerSlice } from '../../../types.generated'
 
-const HeroBanner = ({ slice }) => (
+const HeroBanner = ({ slice } : {slice: HeroBannerSlice}) => (
   <section>
     <div className="relative bg-gray-800 py-32 px-6 sm:py-40 sm:px-12 lg:px-16">
       <div className="absolute inset-0 overflow-hidden">
         <picture>
         {slice.primary.image.mobile
-          ? <source srcSet={slice.primary.image.mobile.url} media="(max-width: 640px)"/>
+          ? <source srcSet={slice.primary.image.mobile.url!} media="(max-width: 640px)"/>
           : <div/>
         }
           <img
-            src={slice.primary.image.url}
-            alt={slice.primary.image.alt}
+            src={slice.primary.image.url!}
+            alt={slice.primary.image.alt!}
             className="w-full h-full object-center object-cover"
           />
         </picture>

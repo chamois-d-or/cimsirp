@@ -1,6 +1,7 @@
 import React from 'react'
+import { ContentSectionCenteredEmbedSlice } from '../../../types.generated'
 
-const ContentSectionCenteredEmbed = ({ slice }) => (
+const ContentSectionCenteredEmbed = ({ slice } : {slice : ContentSectionCenteredEmbedSlice}) => (
   <section>
     <div className="mt-6 prose prose-indigo prose-lg text-gray-500 mx-auto">
       {slice.primary.EmbedItem.embed_url &&

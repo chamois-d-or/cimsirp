@@ -1,9 +1,10 @@
 import React from 'react'
 import { PrismicLink } from '@prismicio/react'
+import { PromoSectionImageTilesSlice } from '../../../types.generated'
 
-const PromoSectionImageTiles = ({ slice }) => (
+const PromoSectionImageTiles = ({ slice } : {slice : PromoSectionImageTilesSlice}) => (
   <section>
-    <div className="relative overflow-hidden" style={{ backgroundColor: slice.primary.backgroundColor}}>
+    <div className="relative overflow-hidden" style={{ backgroundColor: slice.primary.backgroundColor!}}>
       <div className="pt-16 pb-80 sm:pt-24 sm:pb-40 lg:pt-40 lg:pb-48">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:static">
           <div className="sm:max-w-lg">
@@ -26,33 +27,13 @@ const PromoSectionImageTiles = ({ slice }) => (
                     <div className="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
                       <div className="w-44 h-64 rounded-lg overflow-hidden sm:opacity-0 lg:opacity-100">
                         <img
-                          src={slice.primary.image1.url} alt={slice.primary.image1.alt}
+                          src={slice.primary.image1.url!} alt={slice.primary.image1.alt!}
                           className="w-full h-full object-center object-cover"
                         />
                       </div>
                       <div className="w-44 h-64 rounded-lg overflow-hidden">
                         <img
-                          src={slice.primary.image2.url} alt={slice.primary.image2.alt}
-                          className="w-full h-full object-center object-cover"
-                        />
-                      </div>
-                    </div>
-                    <div className="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
-                      <div className="w-44 h-64 rounded-lg overflow-hidden">
-                        <img
-                          src={slice.primary.image3.url} alt={slice.primary.image3.alt}
-                          className="w-full h-full object-center object-cover"
-                        />
-                      </div>
-                      <div className="w-44 h-64 rounded-lg overflow-hidden">
-                        <img
-                          src={slice.primary.image4.url} alt={slice.primary.image4.alt}
-                          className="w-full h-full object-center object-cover"
-                        />
-                      </div>
-                      <div className="w-44 h-64 rounded-lg overflow-hidden">
-                        <img
-                          src={slice.primary.image5.url} alt={slice.primary.image5.alt}
+                          src={slice.primary.image2.url!} alt={slice.primary.image2.alt!}
                           className="w-full h-full object-center object-cover"
                         />
                       </div>
@@ -60,13 +41,33 @@ const PromoSectionImageTiles = ({ slice }) => (
                     <div className="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
                       <div className="w-44 h-64 rounded-lg overflow-hidden">
                         <img
-                          src={slice.primary.image6.url} alt={slice.primary.image6.alt}
+                          src={slice.primary.image3.url!} alt={slice.primary.image3.alt!}
                           className="w-full h-full object-center object-cover"
                         />
                       </div>
                       <div className="w-44 h-64 rounded-lg overflow-hidden">
                         <img
-                          src={slice.primary.image7.url} alt={slice.primary.image7.alt}
+                          src={slice.primary.image4.url!} alt={slice.primary.image4.alt!}
+                          className="w-full h-full object-center object-cover"
+                        />
+                      </div>
+                      <div className="w-44 h-64 rounded-lg overflow-hidden">
+                        <img
+                          src={slice.primary.image5.url!} alt={slice.primary.image5.alt!}
+                          className="w-full h-full object-center object-cover"
+                        />
+                      </div>
+                    </div>
+                    <div className="flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8">
+                      <div className="w-44 h-64 rounded-lg overflow-hidden">
+                        <img
+                          src={slice.primary.image6.url!} alt={slice.primary.image6.alt!}
+                          className="w-full h-full object-center object-cover"
+                        />
+                      </div>
+                      <div className="w-44 h-64 rounded-lg overflow-hidden">
+                        <img
+                          src={slice.primary.image7.url!} alt={slice.primary.image7.alt!}
                           className="w-full h-full object-center object-cover"
                         />
                       </div>

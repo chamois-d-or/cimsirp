@@ -1,6 +1,7 @@
 import React from 'react'
+import { SeparatorSlice } from '../../../types.generated'
 
-const Separator = ({ slice }) => (
+const Separator = ({ slice } : {slice: SeparatorSlice}) => (
     <section className="relative my-12 prose prose-indigo prose-lg mx-auto divide-y-2 divide-gray-200">
       <div>
       </div>

@@ -38,7 +38,15 @@
         "primary": {}
       }
     },
-    "TestSlice": {}
+    "TestSlice": {},
+    "ProductListWithCta": {
+      "default-slice": {
+        "primary": {}
+      },
+      "customProducts": {
+        "primary": {}
+      }
+    }
   },
   "slices/marketing": {
     "ContentSectionCentered": {

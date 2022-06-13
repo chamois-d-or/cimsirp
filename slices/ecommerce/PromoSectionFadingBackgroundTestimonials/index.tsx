@@ -1,16 +1,19 @@
 import React from 'react'
 import { PrismicLink } from '@prismicio/react'
 import * as prismicH from '@prismicio/helpers'
+import { PromoSectionFadingBackgroundTestimonialsSlice } from '../../../types.generated'
 
-const PromoSectionFadingBackgroundTestimonials = ({ slice }) => (
+
+
+const PromoSectionFadingBackgroundTestimonials = ({ slice } : {slice: PromoSectionFadingBackgroundTestimonialsSlice}) => (
   <section>
     <div className="bg-white relative overflow-hidden">
       {/* Decorative background image and gradient */}
       <div aria-hidden="true" className="absolute inset-0">
         <div className="absolute inset-0 max-w-7xl mx-auto overflow-hidden xl:px-8">
           <img
-            src={slice.primary.image.url}
-            alt={slice.primary.image.alt}
+            src={slice.primary.image.url!}
+            alt={slice.primary.image.alt!}
             className="w-full h-full object-center object-cover"
           />
         </div>
@@ -34,7 +37,7 @@ const PromoSectionFadingBackgroundTestimonials = ({ slice }) => (
             {prismicH.asText(slice.primary.description)}
           </p>
           <PrismicLink
-            document={slice.primary.link}
+            field={slice.primary.link}
             className="mt-6 inline-block w-full bg-gray-900 border border-transparent rounded-md py-3 px-8 font-medium text-white hover:bg-gray-800 sm:w-auto"
           >
             {slice.primary.cta}

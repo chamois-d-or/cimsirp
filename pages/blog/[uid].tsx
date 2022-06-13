@@ -51,7 +51,7 @@ export default function BlogPage({doc, menu, footer, locale, locales}: Props) {
 
 //Get page content including menu and footer
 export const getStaticProps : GetStaticProps = async({params, previewData, locale, locales}) =>{
-  const client = createClient( previewData )
+  const client = createClient( {previewData} )
 
   //checking uid is a string
   if (typeof params?.uid !== "string") {

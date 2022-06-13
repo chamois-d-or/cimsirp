@@ -1,9 +1,10 @@
 import React from 'react'
 import { PrismicLink } from '@prismicio/react'
 import * as prismicH from '@prismicio/helpers'
+import { PromoSectionFullWidthWithOverlappingImageTilesSlice } from '../../../types.generated'
 
 
-const PromoSectionFullWidthWithOverlappingImageTiles = ({ slice }) => (
+const PromoSectionFullWidthWithOverlappingImageTiles = ({ slice } : {slice: PromoSectionFullWidthWithOverlappingImageTilesSlice}) => (
   <section>
     <div className="bg-white">
       <div className="pt-32 overflow-hidden sm:pt-14">
@@ -17,7 +18,7 @@ const PromoSectionFullWidthWithOverlappingImageTiles = ({ slice }) => (
                   {prismicH.asText(slice.primary.title2)}
                 </h2>
                 <div className="mt-6 text-base">
-                  <PrismicLink document={slice.primary.ctaLink} className="font-semibold text-white">
+                  <PrismicLink field={slice.primary.ctaLink} className="font-semibold text-white">
                   {slice.primary.linkLabel}<span aria-hidden="true"> &rarr;</span>
                   </PrismicLink>
                 </div>
@@ -29,16 +30,16 @@ const PromoSectionFullWidthWithOverlappingImageTiles = ({ slice }) => (
                     <div className="flex-shrink-0">
                       <img
                         className="h-64 w-64 rounded-lg object-cover md:h-72 md:w-72"
-                        src={slice.primary.image1.url}
-                        alt={slice.primary.image1.alt}
+                        src={slice.primary.image1.url!}
+                        alt={slice.primary.image1.alt!}
                       />
                     </div>
 
                     <div className="mt-6 flex-shrink-0 sm:mt-0">
                       <img
                         className="h-64 w-64 rounded-lg object-cover md:h-72 md:w-72"
-                        src={slice.primary.image2.url}
-                        alt={slice.primary.image2.alt}
+                        src={slice.primary.image2.url!}
+                        alt={slice.primary.image2.alt!}
                       />
                     </div>
                   </div>
@@ -46,16 +47,16 @@ const PromoSectionFullWidthWithOverlappingImageTiles = ({ slice }) => (
                     <div className="flex-shrink-0">
                       <img
                         className="h-64 w-64 rounded-lg object-cover md:h-72 md:w-72"
-                        src={slice.primary.image3.url}
-                        alt={slice.primary.image3.alt}
+                        src={slice.primary.image3.url!}
+                        alt={slice.primary.image3.alt!}
                       />
                     </div>
 
                     <div className="mt-6 flex-shrink-0 sm:mt-0">
                       <img
                         className="h-64 w-64 rounded-lg object-cover md:h-72 md:w-72"
-                        src={slice.primary.image4.url}
-                        alt={slice.primary.image4.alt}
+                        src={slice.primary.image4.url!}
+                        alt={slice.primary.image4.alt!}
                       />
                     </div>
                   </div>
@@ -63,16 +64,16 @@ const PromoSectionFullWidthWithOverlappingImageTiles = ({ slice }) => (
                     <div className="flex-shrink-0">
                       <img
                         className="h-64 w-64 rounded-lg object-cover md:h-72 md:w-72"
-                        src={slice.primary.image5.url}
-                        alt={slice.primary.image5.alt}
+                        src={slice.primary.image5.url!}
+                        alt={slice.primary.image5.alt!}
                       />
                     </div>
 
                     <div className="mt-6 flex-shrink-0 sm:mt-0">
                       <img
                         className="h-64 w-64 rounded-lg object-cover md:h-72 md:w-72"
-                        src={slice.primary.image6.url}
-                        alt={slice.primary.image6.alt}
+                        src={slice.primary.image6.url!}
+                        alt={slice.primary.image6.alt!}
                       />
                     </div>
                   </div>

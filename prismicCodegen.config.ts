@@ -10,7 +10,7 @@ const config: Config = {
 		integrationFields: {
 			catalogTypes: {
 				products: 'import("./types").IntegrationFieldProducts',
-				external_videos: 'import("./types").IntegrationFieldProducts',
+				external_videos: 'import("./types").IntegrationFieldExternalVideos',
 			},
 		},
 	},

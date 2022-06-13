@@ -8,7 +8,7 @@ import { useRouter } from 'next/router'
 
 import { linkResolver } from "../prismicio";
 import { MenuDocumentWithLinkedMenuTabs } from "../pages";
-import { EmptyLinkField } from "@prismicio/types";
+import { FilledLinkToDocumentField } from "@prismicio/types";
 
 type Props = {
     menu: MenuDocumentWithLinkedMenuTabs | null,
@@ -30,13 +30,14 @@ const Header = ({ menu = null , currentLocale = 'en-us', locales = ['en-us'], al
     const router = useRouter()
     function handleChange(e:React.ChangeEvent<HTMLSelectElement>) {
         //Handle language redirect through the header language switch, this relies on linkResolver, additional queries would be needed for more complex urls
-        const newVersion = alt_versions.find(version => version.lang ===  e.target.value )
+        const newVersion = alt_versions.find(version => version.lang ===  e.target.value ) 
         if(!newVersion){
             //Redirect to 404 if alternative version does not exist
             router.push('/404')
         }
         else{
-            router.push(linkResolver(newVersion), linkResolver(newVersion), { locale: e.target.value })
+            const newVersionLink : FilledLinkToDocumentField = {...newVersion, link_type:"Document", tags:[]}
+            router.push(linkResolver(newVersionLink), linkResolver(newVersionLink), { locale: e.target.value })
         }
     }
     return (

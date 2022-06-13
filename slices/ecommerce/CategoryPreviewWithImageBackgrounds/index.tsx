@@ -1,13 +1,14 @@
 import React from 'react'
 import { PrismicRichText, PrismicLink } from '@prismicio/react'
+import { CategoryPreviewWithImageBackgroundsSlice } from '../../../types.generated'
 
-const CategoryPreviewWithImageBackgrounds = ({ slice }) => (
+const CategoryPreviewWithImageBackgrounds = ({ slice } : { slice :CategoryPreviewWithImageBackgroundsSlice}) => (
   <section>
     <div className="bg-gray-50">
       <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
         <div className="sm:flex sm:items-baseline sm:justify-between">
           <h2 className="text-2xl font-extrabold tracking-tight text-gray-900"><PrismicRichText field={slice.primary.title} /></h2>
-          <PrismicLink document={slice.primary.link} className="hidden text-sm font-semibold text-indigo-600 hover:text-indigo-500 sm:block">
+          <PrismicLink field={slice.primary.link} className="hidden text-sm font-semibold text-indigo-600 hover:text-indigo-500 sm:block">
             <span >{ slice.primary.linkLabel }</span><span aria-hidden="true"> &rarr;</span>
           </PrismicLink>
         </div>
@@ -16,12 +17,12 @@ const CategoryPreviewWithImageBackgrounds = ({ slice }) => (
           <div className="group aspect-w-2 aspect-h-1 rounded-lg overflow-hidden sm:aspect-h-1 sm:aspect-w-1 sm:row-span-2">
             <picture>
               {slice.primary.imageLeft.mobile
-                ? <source srcSet={slice.primary.imageLeft.mobile.url} media="(max-width: 640px)"/>
+                ? <source srcSet={slice.primary.imageLeft.mobile.url!} media="(max-width: 640px)"/>
                 : <div/>
               }
               <img
-                src={slice.primary.imageLeft.url}
-                alt={slice.primary.imageLeft.alt}
+                src={slice.primary.imageLeft.url!}
+                alt={slice.primary.imageLeft.alt!}
                 className="object-center object-cover group-hover:opacity-75"
               />
             </picture>
@@ -29,7 +30,7 @@ const CategoryPreviewWithImageBackgrounds = ({ slice }) => (
             <div className="p-6 flex items-end">
               <div>
                 <h3 className="font-semibold text-white">
-                  <PrismicLink document={slice.primary.leftImageLink}>
+                  <PrismicLink field={slice.primary.leftImageLink}>
                     <span className="absolute inset-0" />
                     { slice.primary.imageLeftTitle }
                   </PrismicLink>
@@ -42,8 +43,8 @@ const CategoryPreviewWithImageBackgrounds = ({ slice }) => (
           </div>
           <div className="group aspect-w-2 aspect-h-1 rounded-lg overflow-hidden sm:relative sm:aspect-none sm:h-full">
             <img
-              src={slice.primary.imageTopRight.url} 
-              alt={slice.primary.imageTopRight.alt}
+              src={slice.primary.imageTopRight.url!} 
+              alt={slice.primary.imageTopRight.alt!}
               className="object-center object-cover group-hover:opacity-75 sm:absolute sm:inset-0 sm:w-full sm:h-full"
             />
             <div
@@ -53,7 +54,7 @@ const CategoryPreviewWithImageBackgrounds = ({ slice }) => (
             <div className="p-6 flex items-end sm:absolute sm:inset-0">
               <div>
                 <h3 className="font-semibold text-white">
-                  <PrismicLink document={slice.primary.topRightImageLink}>
+                  <PrismicLink field={slice.primary.topRightImageLink}>
                     <span className="absolute inset-0" />
                     { slice.primary.imageTopRightTitle }
                   </PrismicLink>
@@ -66,8 +67,8 @@ const CategoryPreviewWithImageBackgrounds = ({ slice }) => (
           </div>
           <div className="group aspect-w-2 aspect-h-1 rounded-lg overflow-hidden sm:relative sm:aspect-none sm:h-full">
             <img
-              src={slice.primary.imageBottomRight.url}
-              alt={slice.primary.imageBottomRight.alt}
+              src={slice.primary.imageBottomRight.url!}
+              alt={slice.primary.imageBottomRight.alt!}
               className="object-center object-cover group-hover:opacity-75 sm:absolute sm:inset-0 sm:w-full sm:h-full"
             />
             <div
@@ -77,7 +78,7 @@ const CategoryPreviewWithImageBackgrounds = ({ slice }) => (
             <div className="p-6 flex items-end sm:absolute sm:inset-0">
               <div>
                 <h3 className="font-semibold text-white">
-                  <PrismicLink document={slice.primary.bottomRightImageLink}>
+                  <PrismicLink field={slice.primary.bottomRightImageLink}>
                     <span className="absolute inset-0" />
                     { slice.primary.imageBottomRightTitle }
                   </PrismicLink>

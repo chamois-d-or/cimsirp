@@ -1,7 +1,8 @@
 import React from 'react'
 import { PrismicRichText } from '@prismicio/react'
+import { ContentSectionCenteredSlice } from '../../../types.generated'
 
-const ContentSectionCentered = ({ slice }) => (
+const ContentSectionCentered = ({ slice } : {slice : ContentSectionCenteredSlice}) => (
   <section className="relative mt-6 prose prose-indigo prose-lg text-gray-500 mx-auto">
     {
       slice.primary.description ?
