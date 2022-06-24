@@ -9,8 +9,8 @@ const config: Config = {
 	fields: {
 		integrationFields: {
 			catalogTypes: {
-				products: 'import("./types").IntegrationFieldProducts',
-				external_videos: 'import("./types").IntegrationFieldExternalVideos',
+				"cimsirp--products" : 'import("./types").IntegrationFieldProducts',
+				"cimsirp--external_videos" : 'import("./types").IntegrationFieldExternalVideos',
 			},
 		},
 	},
