@@ -28,6 +28,7 @@
     "recharts": "^2.1.9"
   },
   "devDependencies": {
+    "@prismicio/custom-types-client": "^0.0.7",
     "autoprefixer": "^10.4.4",
     "eslint": "^8.12.0",
     "eslint-config-next": "^12.1.4",
