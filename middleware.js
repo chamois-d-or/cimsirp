@@ -22,8 +22,7 @@ async function getFeatures() {
 }
 
 export async function middleware(req) {
-
-  let visitor_id = req.cookies[COOKIE] || crypto.randomUUID()
+  let visitor_id = req.cookies.get(COOKIE) || crypto.randomUUID()
 
   // Create a GrowthBook client instance
   const growthbook = new GrowthBook({
@@ -51,8 +50,12 @@ export async function middleware(req) {
 
     // Add the cookies if it's not there
     if (!req.cookies[COOKIE]) {
-      res.cookie(COOKIE, visitor_id)
+      res.cookies.set(COOKIE, visitor_id)
     }
   }
   return res
+}
+
+export const config = {
+  matcher: '/blog/:uid',
 }
