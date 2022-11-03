@@ -1,6 +1,37 @@
 {
-  "id": "5ba9ac35-c01e-4386-a2e8-98032cbafa18",
-  "uid": "ut-minus-in",
+  "id": "mock-doc-id",
+  "url": null,
   "type": "page",
-  "data": {}
+  "href": null,
+  "tags": [],
+  "first_publication_date": "1970-01-01T00:00:01+0000",
+  "last_publication_date": "1970-01-01T00:00:01+0000",
+  "slugs": [],
+  "linked_documents": [],
+  "lang": "en-us",
+  "alternate_languages": [],
+  "data": {
+    "slices": [],
+    "meta_title": "fill",
+    "meta_description": "orange",
+    "canonicalLink": {
+      "link_type": "Web",
+      "url": "http://google.com"
+    },
+    "social_cards": [
+      {
+        "social_card_image": {
+          "dimensions": {
+            "width": 900,
+            "height": 500
+          },
+          "alt": null,
+          "copyright": null,
+          "url": "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea"
+        },
+        "social_card_title": "agree",
+        "social_card_description": "noun"
+      }
+    ]
+  }
 }

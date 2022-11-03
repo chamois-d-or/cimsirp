@@ -23,7 +23,7 @@ module.exports = async () => {
     },
     images: {
       loader: "imgix",
-      path: "",
+      path: "https://images.prismic.io/",
     },
   };
 };
