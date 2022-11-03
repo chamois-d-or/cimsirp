@@ -5,7 +5,7 @@ on:
         - dev
 jobs:
   Explore-GitHub-Actions:
-    runs-on: ubuntu-latest
+    runs-on: macos-12
     environment: Dev
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
