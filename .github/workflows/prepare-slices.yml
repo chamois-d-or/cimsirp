@@ -20,6 +20,8 @@ jobs:
           EMAIL: ${{ secrets.EMAIL }}
           PASSWORD: ${{ secrets.PASSWORD }}
           REPOSITORY: ${{ secrets.REPOSITORY }}
-        run: |
+        run:
+          npm i @slicemachine/core
+          npm i @slicemachine/client
           node ./tools/ci-automation/pushModels.mjs
       - run: echo "🍏 This job's status is ${{ job.status }}."
