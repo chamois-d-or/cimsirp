@@ -1,6 +1,6 @@
 {
 	"_latest": "0.3.3",
-	"apiEndpoint": "https://cimsirp.cdn.prismic.io/api/v2",
+	"apiEndpoint": "https://cimsirp-dev.cdn.prismic.io/api/v2",
 	"libraries": [
 		"@/slices/ecommerce",
 		"@/slices/marketing",
