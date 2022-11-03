@@ -23,6 +23,5 @@ jobs:
         run: |
           npm i @slicemachine/core
           npm i @slicemachine/client
-          console.log("installed")
           node tools/ci-automation/pushModels.mjs
       - run: echo "🍏 This job's status is ${{ job.status }}."
