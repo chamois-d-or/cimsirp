@@ -1,11 +1,12 @@
-name: Push slices to prod
+name: Push slices to dev
 on: 
   push:
     branches:
-        - staging
+        - dev
 jobs:
-  Explore-GitHub-Actions:
+  Push-Data-Models-To-Dev:
     runs-on: ubuntu-latest
+    environment: Dev
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
@@ -16,9 +17,11 @@ jobs:
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       - name: Push slices to prod repo
         env: # Or as an environment variable
-          CT_API_KEY: ${{ secrets.CT_API_KEY }}
+          EMAIL: ${{ secrets.EMAIL }}
+          PASSWORD: ${{ secrets.PASSWORD }}
+          REPOSITORY: ${{ secrets.REPOSITORY }}
         run: |
-          ls ${{ github.workspace }}
-          npm i glob
-          node tools/updateSlicesAndCT.js
+          npm i @slicemachine/core
+          npm i @slicemachine/client
+          node tools/ci-automation/pushModels.mjs
       - run: echo "🍏 This job's status is ${{ job.status }}."
