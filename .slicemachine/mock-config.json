@@ -29,8 +29,7 @@
     "category-page": {
       "products": {}
     },
-    "product-page": {},
-    "home-page": {}
+    "product-page": {}
   },
   "slices/ecommerce": {
     "PromoSectionWithBackgroundImage": {},
@@ -39,8 +38,7 @@
         "primary": {}
       }
     },
-    "TestSlice": {},
-    "DiankaFridaySlice": {}
+    "TestSlice": {}
   },
   "slices/marketing": {
     "ContentSectionCentered": {

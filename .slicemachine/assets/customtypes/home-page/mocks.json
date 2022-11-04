@@ -1,37 +1,6 @@
 {
-  "id": "mock-doc-id",
-  "url": null,
+  "id": "a6e41427-b596-4246-a2a0-b09a9cbb9e71",
+  "uid": "voluptas-omnis-ex",
   "type": "home-page",
-  "href": null,
-  "tags": [],
-  "first_publication_date": "1970-01-01T00:00:01+0000",
-  "last_publication_date": "1970-01-01T00:00:01+0000",
-  "slugs": [],
-  "linked_documents": [],
-  "lang": "en-us",
-  "alternate_languages": [],
-  "data": {
-    "slices": [],
-    "meta_title": "mail",
-    "meta_description": "mountain",
-    "canonicalLink": {
-      "link_type": "Web",
-      "url": "https://slicemachine.dev"
-    },
-    "social_cards": [
-      {
-        "social_card_image": {
-          "dimensions": {
-            "width": 900,
-            "height": 500
-          },
-          "alt": null,
-          "copyright": null,
-          "url": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2"
-        },
-        "social_card_title": "report",
-        "social_card_description": "oldest"
-      }
-    ]
-  }
+  "data": {}
 }

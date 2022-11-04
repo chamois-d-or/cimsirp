@@ -33,9 +33,6 @@
             },
             "contact_section_split_two_tone": {
               "type": "SharedSlice"
-            },
-            "dianka_friday_slice": {
-              "type": "SharedSlice"
             }
           }
         }
