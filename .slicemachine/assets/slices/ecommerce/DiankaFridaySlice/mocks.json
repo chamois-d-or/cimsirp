@@ -1,0 +1,26 @@
+[
+  {
+    "variation": "default",
+    "version": "sktwi1xtmkfgx8626",
+    "items": [
+      {}
+    ],
+    "primary": {
+      "title": [
+        {
+          "type": "heading1",
+          "text": "Fresh",
+          "spans": []
+        }
+      ],
+      "description": [
+        {
+          "type": "paragraph",
+          "text": "Officia esse sit duis eiusmod ex laborum excepteur laborum. Reprehenderit irure velit sunt sint pariatur nostrud Lorem excepteur reprehenderit irure aute incididunt velit sint officia. Nisi ullamco exercitation irure nostrud ipsum ut tempor quis et do nulla ut ea anim ipsum.",
+          "spans": []
+        }
+      ]
+    },
+    "slice_type": "dianka_friday_slice"
+  }
+]
