@@ -2,11 +2,13 @@ const prismic = require("@prismicio/client");
 
 const sm = require("./sm.json");
 
+const endpoint = process.env.NEXT_PUBLIC_API_ENDPOINT ? process.env.NEXT_PUBLIC_API_ENDPOINT : sm.apiEndpoint
+
 /**
  * @returns {import('next').NextConfig}
  */
 module.exports = async () => {
-  const client = prismic.createClient(sm.apiEndpoint);
+  const client = prismic.createClient(endpoint);
 
   const repository = await client.getRepository();
   const locales = repository.languages.map((lang) => lang.id);
