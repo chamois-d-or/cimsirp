@@ -20,15 +20,12 @@ const SliceListPage = () => {
           ? slice.id
           : `${index}-${JSON.stringify(slice)}`;
 
-      console.log(slice)
-
       return (
-        <div className="p-20">
+        <div className="p-20" key={key}>
           <h3 className="mb-5 text-center text-2xl rounded-md">Slice: {slice.slice_type}</h3>
           <h3 className="mb-5 text-center text-xl rounded-md">Variation: {slice.variation}</h3>
           <div className="isolate bg-white rounded-md">
             <Comp
-              key={key}
               slice={slice}
               index={index}
               slices={__allSlices}
