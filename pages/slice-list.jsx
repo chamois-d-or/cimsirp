@@ -35,17 +35,14 @@ const SliceListPage = () => {
   // console.log(librarySlices)
   const __allSlices = librarySlices.map(library => library.slices).flat().map(slice => slice.variations).flat()
 
-  const ecommerceSlices = Object.values(state["slices/ecommerce"].components).map(slice => Object.values(slice.mocks)).flat()
-  const marketingSlices = Object.values(state["slices/marketing"].components).map(slice => Object.values(slice.mocks)).flat()
+  // const ecommerceSlices = Object.values(state["slices/ecommerce"].components).map(slice => Object.values(slice.mocks)).flat()
+  // const marketingSlices = Object.values(state["slices/marketing"].components).map(slice => Object.values(slice.mocks)).flat()
 
   const __PRODUCTION__ = process.env.NODE_ENV === "production";
   const defaultComponent = __PRODUCTION__ ? () => null : ({
     slice
   }) => {
     const type = "slice_type" in slice ? slice.slice_type : slice.type;
-    React.useEffect(() => {
-      console.warn(`[SliceZone] Could not find a component for Slice type "${type}"`, slice);
-    }, [slice, type]);
     return /* @__PURE__ */ React.createElement("section", {
       "data-slice-zone-todo-component": "",
       "data-slice-type": type
