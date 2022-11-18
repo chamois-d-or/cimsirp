@@ -1,5 +1,6 @@
 import { components as ecommerceComponents } from '../slices/ecommerce/index'
 import { components as marketingComponents } from '../slices/marketing/index'
+import React from 'react';
 
 const __allComponents = { ...ecommerceComponents, ...marketingComponents }
 
@@ -19,22 +20,51 @@ function classNames(...classes) {
 }
 
 const SliceListPage = () => {
+  const librariesFolders = Object.keys(state)
+  const librarySlices = librariesFolders.map((library) => {
+    return {
+      libraryname: library,
+      slices: Object.values(state[library].components).map((slice) => {
+        return {
+          id: slice.model.id,
+          variations: Object.values(slice.mocks)
+        }
+      })
+    }
+  })
+  // console.log(librarySlices)
+  const __allSlices = librarySlices.map(library => library.slices).flat().map(slice => slice.variations).flat()
+
   const ecommerceSlices = Object.values(state["slices/ecommerce"].components).map(slice => Object.values(slice.mocks)).flat()
   const marketingSlices = Object.values(state["slices/marketing"].components).map(slice => Object.values(slice.mocks)).flat()
-  const __allSlices = [...ecommerceSlices, ...marketingSlices]
-  const renderedSlices = __allSlices.map((slice, index) => {
+
+  const __PRODUCTION__ = process.env.NODE_ENV === "production";
+  const defaultComponent = __PRODUCTION__ ? () => null : ({
+    slice
+  }) => {
     const type = "slice_type" in slice ? slice.slice_type : slice.type;
+    React.useEffect(() => {
+      console.warn(`[SliceZone] Could not find a component for Slice type "${type}"`, slice);
+    }, [slice, type]);
+    return /* @__PURE__ */ React.createElement("section", {
+      "data-slice-zone-todo-component": "",
+      "data-slice-type": type
+    }, "Could not find a component for Slice type \u201C", type, "\u201D");
+  };
+
+  const renderedSlices = __allSlices.map((slice, index) => {
+    const type = slice.slice_type;
 
     let Comp =
       __allComponents[type] || defaultComponent;
 
     const key =
-      "id" in slice && slice.id
-        ? slice.id
+      "slice_type" in slice && slice.slice_type
+        ? slice.slice_type
         : `${index}-${JSON.stringify(slice)}`;
 
     return (
-      <div className="p-20" id={slice.slice_type} key={key}>
+      <div className="p-20" id={slice.slice_type + "__" + slice.variation} key={key}>
         <div className="border-b border-gray-200 pb-5 mb-5">
           <h3 className="text-lg font-medium leading-6 text-gray-900">{slice.slice_type}</h3>
           <p className="mt-2 max-w-4xl text-sm text-gray-500">
@@ -45,34 +75,26 @@ const SliceListPage = () => {
           <Comp
             slice={slice}
             index={index}
-            slices={__allSlices}
+          // slices={__allSlices}
           />
         </div>
       </div>
     );
   })
-
-  const renderedSlicesNav = [
-    {
-      name: 'Ecommerce',
+  const renderedSlicesNav = librarySlices.map(library => {
+    return {
+      name: library.libraryname,
       current: false,
-      children: ecommerceSlices.map((slice, index) => {
+      children: library.slices.map((slice, index) => {
         return {
-          name: slice.slice_type,
-          href: "#" + slice.slice_type
+          name: slice.id,
+          children: slice.variations,
+          current: false
+          // href: "#" + slice.slice_type + "__" + slice.variation
         }
       })
-    },
-    {
-      name: 'Marketing',
-      current: false,
-      children: marketingSlices.map((slice, index) => {
-        return {
-          name: slice.slice_type,
-          href: "#" + slice.slice_type
-        }
-      })
-    }]
+    }
+  })
 
   const [sidebarOpen, setSidebarOpen] = useState(false)
   return (
@@ -132,16 +154,16 @@ const SliceListPage = () => {
                   </div>
                   <div className="mt-5 h-0 flex-1 overflow-y-auto">
                     <nav className="space-y-1 px-2">
-                      {renderedSlicesNav.map((item) => (
+                      {renderedSlicesNav.map((library) => (
                         <a
-                          key={item.name}
-                          href={item.href}
+                          key={library.name}
+                          href={library.href}
                           className={classNames(
-                            item.current ? 'bg-indigo-800 text-white' : 'text-indigo-100 hover:bg-indigo-600',
+                            library.current ? 'bg-indigo-800 text-white' : 'text-indigo-100 hover:bg-indigo-600',
                             'group flex items-center px-2 py-2 text-base font-medium rounded-md'
                           )}
                         >
-                          {item.name}
+                          {library.name}
                         </a>
                       ))}
                     </nav>
@@ -168,28 +190,28 @@ const SliceListPage = () => {
             </div>
             <div className="mt-5 flex flex-grow flex-col">
               <nav className="flex-1 space-y-1 bg-white px-2" aria-label="Sidebar">
-                {renderedSlicesNav.map((item) =>
-                  !item.children ? (
-                    <div key={item.name}>
+                {renderedSlicesNav.map((library) =>
+                  !library.children ? (
+                    <div key={library.name}>
                       <a
-                        href={item.href}
+                        href={library.href}
                         className={classNames(
-                          item.current
+                          library.current
                             ? 'bg-gray-100 text-gray-900'
                             : 'bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900',
                           'group w-full flex items-center pl-7 pr-2 py-2 text-sm font-medium rounded-md'
                         )}
                       >
-                        {item.name}
+                        {library.name}
                       </a>
                     </div>
                   ) : (
-                    <Disclosure as="div" key={item.name} className="space-y-1">
+                    <Disclosure as="div" key={library.name} className="space-y-1">
                       {({ open }) => (
                         <>
                           <Disclosure.Button
                             className={classNames(
-                              item.current
+                              library.current
                                 ? 'bg-gray-100 text-gray-900'
                                 : 'bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900',
                               'group w-full flex items-center pr-2 py-2 text-left text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500'
@@ -205,19 +227,56 @@ const SliceListPage = () => {
                             >
                               <path d="M6 6L14 10L6 14V6Z" fill="currentColor" />
                             </svg>
-                            {item.name}
+                            {library.name}
                           </Disclosure.Button>
                           <Disclosure.Panel className="space-y-1">
-                            {item.children.map((subItem) => (
-                              <a
-                                key={subItem.name}
-                                as="a"
-                                href={subItem.href}
-                                className="group flex w-full items-center rounded-md py-2 pl-10 pr-2 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900"
-                              >
-                                {subItem.name}
-                              </a>
-                            ))}
+                            {library.children.map((slice) => {
+                              return (
+                                <Disclosure as="div" key={library.name} className="space-y-1">
+                                  {({ open }) => (
+                                    <>
+                                      <Disclosure.Button
+                                        className={classNames(
+                                          slice.current
+                                            ? 'bg-gray-100 text-gray-900'
+                                            : 'bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900',
+                                          'group w-full flex items-center pr-2 py-2 pl-10 text-left text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500'
+                                        )}
+                                      >
+                                        <svg
+                                          className={classNames(
+                                            open ? 'text-gray-400 rotate-90' : 'text-gray-300',
+                                            'mr-2 h-5 w-5 flex-shrink-0 transform transition-colors duration-150 ease-in-out group-hover:text-gray-400'
+                                          )}
+                                          viewBox="0 0 20 20"
+                                          aria-hidden="true"
+                                        >
+                                          <path d="M6 6L14 10L6 14V6Z" fill="currentColor" />
+                                        </svg>
+                                        {slice.name}
+                                      </Disclosure.Button>
+                                      <Disclosure.Panel className="space-y-1">
+                                        {
+                                          slice.children.map((variation) => {
+                                            return (
+                                              <a
+                                                key={variation.variation}
+                                                as="a"
+                                                href={"#" + slice.name + "__" + variation.variation}
+                                                className="group flex w-full items-center rounded-md py-2 pl-20 pr-2 text-sm font-medium text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+                                              >
+                                                {variation.variation}
+                                              </a>
+                                            )
+                                          })
+                                        }
+                                      </Disclosure.Panel>
+                                    </>
+                                  )}
+                                </Disclosure>
+                              )
+                            }
+                            )}
                           </Disclosure.Panel>
                         </>
                       )}
