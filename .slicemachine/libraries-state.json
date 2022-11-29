@@ -1,6 +1,78 @@
 {
   "slices/ecommerce": {
     "components": {
+      "benjamin_slice": {
+        "library": "slices/ecommerce",
+        "id": "benjamin_slice",
+        "name": "BenjaminSlice",
+        "description": "BenjaminSlice",
+        "model": {
+          "id": "benjamin_slice",
+          "type": "SharedSlice",
+          "name": "BenjaminSlice",
+          "description": "BenjaminSlice",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "BenjaminSlice",
+              "primary": {
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "heading1",
+                    "label": "Title",
+                    "placeholder": "This is where it all begins..."
+                  }
+                },
+                "description": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "paragraph",
+                    "label": "Description",
+                    "placeholder": "A nice description of your feature"
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format",
+              "items": {}
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {}
+            ],
+            "primary": {
+              "title": [
+                {
+                  "type": "heading1",
+                  "text": "Difficulty",
+                  "spans": []
+                }
+              ],
+              "description": [
+                {
+                  "type": "paragraph",
+                  "text": "Mollit quis tempor nostrud consectetur et fugiat reprehenderit exercitation sunt consequat nisi mollit.",
+                  "spans": []
+                }
+              ]
+            },
+            "slice_type": "benjamin_slice"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {}
+      },
       "category_preview_with_image_backgrounds": {
         "library": "slices/ecommerce",
         "id": "category_preview_with_image_backgrounds",

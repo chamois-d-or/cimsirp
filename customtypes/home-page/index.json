@@ -33,6 +33,9 @@
             },
             "contact_section_split_two_tone": {
               "type": "SharedSlice"
+            },
+            "benjamin_slice": {
+              "type": "SharedSlice"
             }
           }
         }
