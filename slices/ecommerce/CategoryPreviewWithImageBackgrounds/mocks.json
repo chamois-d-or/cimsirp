@@ -1,0 +1,171 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default-slice",
+    "primary": {
+      "title": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "heading1",
+            "content": {
+              "text": "Result"
+            }
+          }
+        ]
+      },
+      "linkLabel": {
+        "__TYPE__": "FieldContent",
+        "value": "magnet",
+        "type": "Text"
+      },
+      "link": {
+        "__TYPE__": "LinkContent",
+        "value": {
+          "__TYPE__": "DocumentLink",
+          "id": "mock_document_id"
+        }
+      },
+      "imageLeft": {
+        "__TYPE__": "ImageContent",
+        "origin": {
+          "id": "main",
+          "url": "https://images.unsplash.com/photo-1560762484-813fc97650a0",
+          "width": 3344,
+          "height": 2509
+        },
+        "url": "https://images.unsplash.com/photo-1560762484-813fc97650a0?rect=418%2C0%2C2509%2C2509&w=592&h=592",
+        "width": 592,
+        "height": 592,
+        "edit": {
+          "zoom": 1,
+          "crop": {
+            "x": 418,
+            "y": 0
+          },
+          "background": "transparent"
+        },
+        "thumbnails": {
+          "mobile": {
+            "origin": {
+              "id": "mobile",
+              "url": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
+              "width": 5243,
+              "height": 3495
+            },
+            "url": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?rect=0%2C437%2C5243%2C2622&w=560&h=280",
+            "width": 560,
+            "height": 280,
+            "edit": {
+              "zoom": 1,
+              "crop": {
+                "x": 0,
+                "y": 437
+              },
+              "background": "transparent"
+            }
+          }
+        }
+      },
+      "imageLeftTitle": {
+        "__TYPE__": "FieldContent",
+        "value": "grown",
+        "type": "Text"
+      },
+      "imageLeftCta": {
+        "__TYPE__": "FieldContent",
+        "value": "body",
+        "type": "Text"
+      },
+      "leftImageLink": {
+        "__TYPE__": "LinkContent",
+        "value": {
+          "__TYPE__": "DocumentLink",
+          "id": "mock_document_id"
+        }
+      },
+      "imageTopRight": {
+        "__TYPE__": "ImageContent",
+        "origin": {
+          "id": "main",
+          "url": "https://images.unsplash.com/photo-1591012911207-0dbac31f37da",
+          "width": 4000,
+          "height": 4000
+        },
+        "url": "https://images.unsplash.com/photo-1591012911207-0dbac31f37da?rect=0%2C1054%2C4000%2C1892&w=592&h=280",
+        "width": 592,
+        "height": 280,
+        "edit": {
+          "zoom": 1,
+          "crop": {
+            "x": 0,
+            "y": 1054
+          },
+          "background": "transparent"
+        },
+        "thumbnails": {}
+      },
+      "imageTopRightTitle": {
+        "__TYPE__": "FieldContent",
+        "value": "herd",
+        "type": "Text"
+      },
+      "imageTopRightCta": {
+        "__TYPE__": "FieldContent",
+        "value": "gulf",
+        "type": "Text"
+      },
+      "topRightImageLink": {
+        "__TYPE__": "LinkContent",
+        "value": {
+          "__TYPE__": "DocumentLink",
+          "id": "mock_document_id"
+        }
+      },
+      "imageBottomRight": {
+        "__TYPE__": "ImageContent",
+        "origin": {
+          "id": "main",
+          "url": "https://images.unsplash.com/photo-1589652717521-10c0d092dea9",
+          "width": 4752,
+          "height": 3168
+        },
+        "url": "https://images.unsplash.com/photo-1589652717521-10c0d092dea9?rect=0%2C460%2C4752%2C2248&w=592&h=280",
+        "width": 592,
+        "height": 280,
+        "edit": {
+          "zoom": 1,
+          "crop": {
+            "x": 0,
+            "y": 460
+          },
+          "background": "transparent"
+        },
+        "thumbnails": {}
+      },
+      "imageBottomRightTitle": {
+        "__TYPE__": "FieldContent",
+        "value": "noon",
+        "type": "Text"
+      },
+      "imageBottomRightCta": {
+        "__TYPE__": "FieldContent",
+        "value": "state",
+        "type": "Text"
+      },
+      "bottomRightImageLink": {
+        "__TYPE__": "LinkContent",
+        "value": {
+          "__TYPE__": "DocumentLink",
+          "id": "mock_document_id"
+        }
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": []
+      }
+    ]
+  }
+]

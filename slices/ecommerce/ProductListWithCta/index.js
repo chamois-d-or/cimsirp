@@ -14,9 +14,9 @@ const ProductListWithCta = ({ slice }) => (
         </div>
 
         <div className="mt-6 grid grid-cols-2 gap-x-4 gap-y-10 sm:gap-x-6 md:grid-cols-4 md:gap-y-0 lg:gap-x-8">
-          {slice.items.map((item) => (
+          {slice.items.map((item,index) => (
           item.productLink ?
-            <div key={item.productLink?.data?.product?.id} className="group relative">
+            <div key={index} className="group relative">
               <div className="w-full h-56 bg-gray-200 rounded-md overflow-hidden group-hover:opacity-75 lg:h-72 xl:h-80">
                 <img
                   src={item.productLink?.data?.product?.imageSrc}

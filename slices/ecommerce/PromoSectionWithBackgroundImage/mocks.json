@@ -1,0 +1,108 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default-slice",
+    "primary": {
+      "title": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "heading1",
+            "content": {
+              "text": "Paragraph"
+            }
+          }
+        ]
+      },
+      "description": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Lorem aliqua aute fugiat."
+            }
+          }
+        ]
+      },
+      "image": {
+        "__TYPE__": "ImageContent",
+        "origin": {
+          "id": "main",
+          "url": "https://images.unsplash.com/photo-1493119508027-2b584f234d6c",
+          "width": 3424,
+          "height": 3424
+        },
+        "url": "https://images.unsplash.com/photo-1493119508027-2b584f234d6c?rect=0%2C1033%2C3424%2C1357&w=1216&h=482",
+        "width": 1216,
+        "height": 482,
+        "edit": {
+          "zoom": 1,
+          "crop": {
+            "x": 0,
+            "y": 1033
+          },
+          "background": "transparent"
+        },
+        "thumbnails": {
+          "mobile": {
+            "origin": {
+              "id": "mobile",
+              "url": "https://images.unsplash.com/photo-1600804931749-2da4ce26c869",
+              "width": 3199,
+              "height": 3199
+            },
+            "url": "https://images.unsplash.com/photo-1600804931749-2da4ce26c869?rect=0%2C428%2C3199%2C2342&w=605&h=443",
+            "width": 605,
+            "height": 443,
+            "edit": {
+              "zoom": 1,
+              "crop": {
+                "x": 0,
+                "y": 428
+              },
+              "background": "transparent"
+            }
+          }
+        }
+      },
+      "link": {
+        "__TYPE__": "LinkContent",
+        "value": {
+          "__TYPE__": "DocumentLink",
+          "id": "mock_document_id"
+        }
+      },
+      "linkLabel": {
+        "__TYPE__": "FieldContent",
+        "value": "various",
+        "type": "Text"
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": []
+      }
+    ]
+  },
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "cameraInsurance",
+    "primary": {
+      "link": {
+        "__TYPE__": "LinkContent",
+        "value": {
+          "__TYPE__": "DocumentLink",
+          "id": "mock_document_id"
+        }
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": []
+      }
+    ]
+  }
+]

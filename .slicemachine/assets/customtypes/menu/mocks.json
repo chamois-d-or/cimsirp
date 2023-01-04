@@ -1,30 +1,47 @@
 {
-  "id": "2fc53b6e-37a2-457f-8c3d-3e76435af5b2",
-  "uid": "modi-est-odit",
-  "type": "menu",
-  "data": {
-    "topPromoBanner": "leverage magnetic e-commerce",
-    "logo": {
-      "dimensions": {
-        "width": 64,
-        "height": 64
-      },
-      "alt": "Placeholder image",
-      "copyright": null,
-      "url": "https://images.unsplash.com/photo-1571126770897-2d612d1f7b89?w=64&h=64&fit=crop"
+  "topPromoBanner": {
+    "__TYPE__": "FieldContent",
+    "value": "mysterious",
+    "type": "Text"
+  },
+  "logo": {
+    "__TYPE__": "ImageContent",
+    "origin": {
+      "id": "main",
+      "url": "https://images.unsplash.com/photo-1607582278038-6bebbd4d7b72",
+      "width": 4010,
+      "height": 4010
     },
-    "menuTabs": [
-      {
-        "menuTab": {
-          "link_type": "Web",
-          "url": "https://prismic.io"
-        }
+    "url": "https://images.unsplash.com/photo-1607582278038-6bebbd4d7b72?rect=0%2C0%2C4010%2C4010&w=64&h=64",
+    "width": 64,
+    "height": 64,
+    "edit": {
+      "zoom": 1,
+      "crop": {
+        "x": 0,
+        "y": 0
       },
+      "background": "transparent"
+    },
+    "thumbnails": {}
+  },
+  "menuTabs": {
+    "__TYPE__": "GroupContentType",
+    "value": [
       {
-        "menuTab": {
-          "link_type": "Web",
-          "url": "http://google.com"
-        }
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "menuTab",
+            {
+              "__TYPE__": "LinkContent",
+              "value": {
+                "__TYPE__": "DocumentLink",
+                "id": "mock_document_id"
+              }
+            }
+          ]
+        ]
       }
     ]
   }

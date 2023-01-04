@@ -1,0 +1,55 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default-slice",
+    "primary": {
+      "description": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "heading1",
+            "content": {
+              "text": "Direction"
+            }
+          },
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Labore aute aute velit id id. Tempor magna veniam consectetur elit reprehenderit fugiat culpa amet aliqua mollit magna est ipsum velit. Magna aliqua minim nisi sit incididunt dolor occaecat qui esse."
+            }
+          },
+          {
+            "type": "heading1",
+            "content": {
+              "text": "Later"
+            }
+          },
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Occaecat occaecat consectetur labore minim reprehenderit nisi nostrud irure duis veniam consequat consectetur eu. Lorem dolore ex aute fugiat. Minim ex Lorem occaecat proident irure velit excepteur nisi in aliquip mollit sit labore amet."
+            }
+          },
+          {
+            "type": "heading1",
+            "content": {
+              "text": "Organized"
+            }
+          },
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Id voluptate labore commodo proident."
+            }
+          }
+        ]
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": []
+      }
+    ]
+  }
+]

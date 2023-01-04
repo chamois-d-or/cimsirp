@@ -1,0 +1,52 @@
+{
+  "title": {
+    "__TYPE__": "FieldContent",
+    "value": "science",
+    "type": "Text"
+  },
+  "slices": {
+    "__TYPE__": "SliceContentType",
+    "value": [
+      {
+        "key": "menu_sub_tab$31a33ecc-730c-46be-a3b0-0337b4b134d9",
+        "name": "menu_sub_tab",
+        "widget": {
+          "__TYPE__": "SharedSliceContent",
+          "variation": "default-slice",
+          "primary": {
+            "sectionTitle": {
+              "__TYPE__": "FieldContent",
+              "value": "industry",
+              "type": "Text"
+            }
+          },
+          "items": [
+            {
+              "__TYPE__": "GroupItemContent",
+              "value": [
+                [
+                  "subSectionTitle",
+                  {
+                    "__TYPE__": "FieldContent",
+                    "value": "make",
+                    "type": "Text"
+                  }
+                ],
+                [
+                  "subSectionLink",
+                  {
+                    "__TYPE__": "LinkContent",
+                    "value": {
+                      "__TYPE__": "ExternalLink",
+                      "url": "http://twitter.com"
+                    }
+                  }
+                ]
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

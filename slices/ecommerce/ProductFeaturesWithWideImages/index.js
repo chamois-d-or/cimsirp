@@ -14,9 +14,9 @@ const ProductFeaturesWithWideImages = ({ slice }) => (
           </div>
 
           <div className="space-y-16 pt-10 mt-10 border-t border-gray-200 sm:pt-16 sm:mt-16">
-            {slice.items.map((item) => (
+            {slice.items.map((item, index) => (
               <div
-                key={item.title}
+                key={index}
                 className="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:gap-x-8 lg:items-center"
               >
                 <div className="mt-6 lg:mt-0 lg:col-span-5 xl:col-span-4">
