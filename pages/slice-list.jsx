@@ -1,8 +1,11 @@
-import { components as ecommerceComponents } from '../slices/ecommerce/index'
-import { components as marketingComponents } from '../slices/marketing/index'
+
 import React from 'react';
 
+//Configure the list of slice components here by importing all your slice librarires
+import { components as ecommerceComponents } from '../slices/ecommerce/index'
+import { components as marketingComponents } from '../slices/marketing/index'
 const __allComponents = { ...ecommerceComponents, ...marketingComponents }
+// End of configuration
 
 import state from "../.slicemachine/libraries-state.json";
 
@@ -32,11 +35,8 @@ const SliceListPage = () => {
       })
     }
   })
-  // console.log(librarySlices)
-  const __allSlices = librarySlices.map(library => library.slices).flat().map(slice => slice.variations).flat()
 
-  // const ecommerceSlices = Object.values(state["slices/ecommerce"].components).map(slice => Object.values(slice.mocks)).flat()
-  // const marketingSlices = Object.values(state["slices/marketing"].components).map(slice => Object.values(slice.mocks)).flat()
+  const __allSlices = librarySlices.map(library => library.slices).flat().map(slice => slice.variations).flat()
 
   const __PRODUCTION__ = process.env.NODE_ENV === "production";
   const defaultComponent = __PRODUCTION__ ? () => null : ({
@@ -57,8 +57,8 @@ const SliceListPage = () => {
 
     const key =
       "slice_type" in slice && slice.slice_type
-        ? slice.slice_type
-        : `${index}-${JSON.stringify(slice)}`;
+        ? `${index}-${slice.slice_type}-${slice.variation}`
+        : `${index}-${JSON.stringify(slice)}-${JSON.stringify(slice)}`;
 
     return (
       <div className="p-20" id={slice.slice_type + "__" + slice.variation} key={key}>
@@ -227,9 +227,23 @@ const SliceListPage = () => {
                             {library.name}
                           </Disclosure.Button>
                           <Disclosure.Panel className="space-y-1">
-                            {library.children.map((slice) => {
-                              return (
-                                <Disclosure as="div" key={library.name} className="space-y-1">
+                            {library.children.map((slice) =>
+                              slice.children.length === 1 ? (
+                                <div key={slice.name}>
+                                  <a
+                                    href={"#" + slice.name + "__" + slice.children[0].variation}
+                                    className={classNames(
+                                      slice.current
+                                        ? 'bg-gray-100 text-gray-900'
+                                        : 'bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900',
+                                      'group w-full flex items-center pl-[4.25rem] pr-2 py-2 text-sm font-medium rounded-md'
+                                    )}
+                                  >
+                                    {slice.name}
+                                  </a>
+                                </div>
+                              ) : (
+                                <Disclosure as="div" key={slice.name} className="space-y-1">
                                   {({ open }) => (
                                     <>
                                       <Disclosure.Button
@@ -272,7 +286,6 @@ const SliceListPage = () => {
                                   )}
                                 </Disclosure>
                               )
-                            }
                             )}
                           </Disclosure.Panel>
                         </>

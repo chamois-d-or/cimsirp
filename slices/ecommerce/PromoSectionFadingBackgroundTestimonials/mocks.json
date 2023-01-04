@@ -1,0 +1,91 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default-slice",
+    "primary": {
+      "title": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "heading1",
+            "content": {
+              "text": "Rapidly"
+            }
+          }
+        ]
+      },
+      "description": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Qui ut laboris consequat. Dolore enim est esse nulla et irure dolor mollit exercitation ad adipisicing excepteur duis culpa cupidatat. Adipisicing elit nostrud fugiat cillum in irure aute dolor sunt tempor eiusmod exercitation anim."
+            }
+          }
+        ]
+      },
+      "cta": {
+        "__TYPE__": "FieldContent",
+        "value": "entirely",
+        "type": "Text"
+      },
+      "link": {
+        "__TYPE__": "LinkContent",
+        "value": {
+          "__TYPE__": "DocumentLink",
+          "id": "mock_document_id"
+        }
+      },
+      "quotesTitle": {
+        "__TYPE__": "FieldContent",
+        "value": "beauty",
+        "type": "Text"
+      },
+      "image": {
+        "__TYPE__": "ImageContent",
+        "origin": {
+          "id": "main",
+          "url": "https://images.unsplash.com/photo-1586952518485-11b180e92764",
+          "width": 4172,
+          "height": 4000
+        },
+        "url": "https://images.unsplash.com/photo-1586952518485-11b180e92764?rect=0%2C360%2C4172%2C3280&w=1216&h=956",
+        "width": 1216,
+        "height": 956,
+        "edit": {
+          "zoom": 1,
+          "crop": {
+            "x": 0,
+            "y": 360
+          },
+          "background": "transparent"
+        },
+        "thumbnails": {}
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "quote",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "composition",
+              "type": "Text"
+            }
+          ],
+          [
+            "attribution",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "cookies",
+              "type": "Text"
+            }
+          ]
+        ]
+      }
+    ]
+  }
+]

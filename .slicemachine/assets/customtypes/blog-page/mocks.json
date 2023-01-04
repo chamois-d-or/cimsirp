@@ -1,126 +1,418 @@
 {
-  "id": "fb951321-6734-4ef4-9525-b6f04b7e58f9",
-  "uid": "sint-necessitatibus-ex",
-  "type": "blog-page",
-  "data": {
-    "title": [
+  "uid": {
+    "__TYPE__": "UIDContent",
+    "value": "concerned"
+  },
+  "title": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
       {
         "type": "heading1",
-        "text": "Morph turn-key content",
-        "spans": []
-      }
-    ],
-    "category": [
-      {
-        "type": "heading1",
-        "text": "Leverage vertical niches",
-        "spans": []
-      }
-    ],
-    "description": [
-      {
-        "type": "paragraph",
-        "text": "Velit tempor do mollit ex quis eu laborum ipsum anim non commodo in ad minim. Deserunt consequat magna do pariatur cillum tempor ea ea commodo sunt ad ullamco.",
-        "spans": []
-      }
-    ],
-    "meta_title": "orchestrate cutting-edge schemas",
-    "meta_description": "synthesize global synergies",
-    "canonicalLink": {
-      "link_type": "Web",
-      "url": "https://slicemachine.dev"
-    },
-    "social_cards": [
-      {
-        "social_card_image": {
-          "dimensions": {
-            "width": 900,
-            "height": 500
-          },
-          "alt": "Placeholder image",
-          "copyright": null,
-          "url": "https://images.unsplash.com/photo-1601933973783-43cf8a7d4c5f?w=900&h=500&fit=crop"
-        },
-        "social_card_title": "aggregate user-centric infrastructures",
-        "social_card_description": "extend next-generation deliverables"
-      },
-      {
-        "social_card_image": {
-          "dimensions": {
-            "width": 900,
-            "height": 500
-          },
-          "alt": "Placeholder image",
-          "copyright": null,
-          "url": "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?w=900&h=500&fit=crop"
-        },
-        "social_card_title": "syndicate e-business systems",
-        "social_card_description": "evolve extensible content"
-      },
-      {
-        "social_card_image": {
-          "dimensions": {
-            "width": 900,
-            "height": 500
-          },
-          "alt": "Placeholder image",
-          "copyright": null,
-          "url": "https://images.unsplash.com/photo-1587653915936-5623ea0b949a?w=900&h=500&fit=crop"
-        },
-        "social_card_title": "revolutionize killer action-items",
-        "social_card_description": "evolve cutting-edge infrastructures"
-      },
-      {
-        "social_card_image": {
-          "dimensions": {
-            "width": 900,
-            "height": 500
-          },
-          "alt": "Placeholder image",
-          "copyright": null,
-          "url": "https://images.unsplash.com/photo-1531771686035-25f47595c87a?w=900&h=500&fit=crop"
-        },
-        "social_card_title": "morph seamless schemas",
-        "social_card_description": "grow next-generation platforms"
-      }
-    ],
-    "isVariant": false,
-    "variants": [
-      {
-        "variant": {
-          "link_type": "Web",
-          "url": "http://google.com"
-        },
-        "bucket": "synthesize integrated models"
-      },
-      {
-        "variant": {
-          "link_type": "Web",
-          "url": "http://twitter.com"
-        },
-        "bucket": "facilitate collaborative models"
-      },
-      {
-        "variant": {
-          "link_type": "Web",
-          "url": "https://prismic.io"
-        },
-        "bucket": "transition synergistic systems"
-      },
-      {
-        "variant": {
-          "link_type": "Web",
-          "url": "http://twitter.com"
-        },
-        "bucket": "recontextualize bricks-and-clicks technologies"
-      },
-      {
-        "variant": {
-          "link_type": "Web",
-          "url": "https://prismic.io"
-        },
-        "bucket": "repurpose mission-critical mindshare"
+        "content": {
+          "text": "Label"
+        }
       }
     ]
+  },
+  "category": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "heading1",
+        "content": {
+          "text": "River"
+        }
+      }
+    ]
+  },
+  "description": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "paragraph",
+        "content": {
+          "text": "Deserunt occaecat consectetur aliqua reprehenderit culpa reprehenderit excepteur minim irure."
+        }
+      }
+    ]
+  },
+  "slices": {
+    "__TYPE__": "SliceContentType",
+    "value": [
+      {
+        "key": "content_section_centered$34331258-65f2-4ca8-a2d2-92df2c291bb4",
+        "name": "content_section_centered",
+        "widget": {
+          "__TYPE__": "SharedSliceContent",
+          "variation": "default-slice",
+          "primary": {
+            "description": {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Aliquip et laboris est duis nostrud fugiat ullamco amet ea. Pariatur exercitation officia adipisicing voluptate aliqua dolor mollit. Ipsum enim et dolore nisi velit officia ipsum cupidatat cupidatat ipsum."
+                  }
+                }
+              ]
+            }
+          },
+          "items": [
+            {
+              "__TYPE__": "GroupItemContent",
+              "value": []
+            }
+          ]
+        }
+      },
+      {
+        "key": "content_section_centered_embed$4ec4ea53-a34b-4912-a7c4-5d42da88e15d",
+        "name": "content_section_centered_embed",
+        "widget": {
+          "__TYPE__": "SharedSliceContent",
+          "variation": "default-slice",
+          "primary": {
+            "EmbedItem": {
+              "embed_url": "https://twitter.com/prismicio/status/1354835716430319617",
+              "author_name": "Prismic",
+              "author_url": "https://twitter.com/prismicio",
+              "html": "<blockquote class=\"twitter-tweet\"><p lang=\"en\" dir=\"ltr\">Does anyone want to create a wildly popular website for discussing &#39;Wall Street Bets&#39; using Prismic?<br><br>It may or may not have to look a lot like <a href=\"https://twitter.com/hashtag/reddit?src=hash&amp;ref_src=twsrc%5Etfw\">#reddit</a> and we won&#39;t make it private.<br><br>Just asking for some friends...</p>&mdash; Prismic (@prismicio) <a href=\"https://twitter.com/prismicio/status/1354835716430319617?ref_src=twsrc%5Etfw\">January 28, 2021</a></blockquote>\n<script async src=\"https://platform.twitter.com/widgets.js\" charset=\"utf-8\"></script>\n",
+              "width": 550,
+              "height": null,
+              "type": "rich",
+              "cache_age": "3153600000",
+              "provider_name": "Twitter",
+              "provider_url": "http://www.twitter.com/",
+              "version": "1.0",
+              "all": {
+                "embed_url": "https://twitter.com/prismicio/status/1354835716430319617",
+                "author_name": "Prismic",
+                "author_url": "https://twitter.com/prismicio",
+                "html": "<blockquote class=\"twitter-tweet\"><p lang=\"en\" dir=\"ltr\">Does anyone want to create a wildly popular website for discussing &#39;Wall Street Bets&#39; using Prismic?<br><br>It may or may not have to look a lot like <a href=\"https://twitter.com/hashtag/reddit?src=hash&amp;ref_src=twsrc%5Etfw\">#reddit</a> and we won&#39;t make it private.<br><br>Just asking for some friends...</p>&mdash; Prismic (@prismicio) <a href=\"https://twitter.com/prismicio/status/1354835716430319617?ref_src=twsrc%5Etfw\">January 28, 2021</a></blockquote>\n<script async src=\"https://platform.twitter.com/widgets.js\" charset=\"utf-8\"></script>\n",
+                "width": 550,
+                "height": null,
+                "type": "rich",
+                "cache_age": "3153600000",
+                "provider_name": "Twitter",
+                "provider_url": "http://www.twitter.com/",
+                "version": "1.0"
+              },
+              "__TYPE__": "EmbedContent"
+            }
+          },
+          "items": [
+            {
+              "__TYPE__": "GroupItemContent",
+              "value": []
+            }
+          ]
+        }
+      },
+      {
+        "key": "content_section_centered_image$24a5d227-186b-49ca-a5bc-3e0a98659964",
+        "name": "content_section_centered_image",
+        "widget": {
+          "__TYPE__": "SharedSliceContent",
+          "variation": "default-slice",
+          "primary": {
+            "description": {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Exercitation anim qui aute do dolor cillum occaecat. Pariatur et occaecat velit duis incididunt deserunt nisi minim do nulla labore laborum est laborum."
+                  }
+                }
+              ]
+            },
+            "image": {
+              "__TYPE__": "ImageContent",
+              "origin": {
+                "id": "main",
+                "url": "https://images.unsplash.com/photo-1589321599763-d66926c29613",
+                "width": 3168,
+                "height": 4752
+              },
+              "url": "https://images.unsplash.com/photo-1589321599763-d66926c29613",
+              "width": 3168,
+              "height": 4752,
+              "edit": {
+                "zoom": 1,
+                "crop": {
+                  "x": 0,
+                  "y": 0
+                },
+                "background": "transparent"
+              },
+              "thumbnails": {}
+            }
+          },
+          "items": [
+            {
+              "__TYPE__": "GroupItemContent",
+              "value": []
+            }
+          ]
+        }
+      },
+      {
+        "key": "separator$c0705329-245a-46f5-ba49-15466d08b0a9",
+        "name": "separator",
+        "widget": {
+          "__TYPE__": "SharedSliceContent",
+          "variation": "default-slice",
+          "primary": {},
+          "items": [
+            {
+              "__TYPE__": "GroupItemContent",
+              "value": []
+            }
+          ]
+        }
+      },
+      {
+        "key": "content_section_two_columns_with_image$249929d2-1086-49d5-b494-d61cd173775c",
+        "name": "content_section_two_columns_with_image",
+        "widget": {
+          "__TYPE__": "SharedSliceContent",
+          "variation": "default-slice",
+          "primary": {
+            "title": {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "heading1",
+                  "content": {
+                    "text": "Close"
+                  }
+                }
+              ]
+            },
+            "description": {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Ea elit consequat labore reprehenderit ullamco aliquip fugiat ipsum sunt aliquip ut aliqua excepteur culpa et."
+                  }
+                }
+              ]
+            },
+            "superTitle": {
+              "__TYPE__": "FieldContent",
+              "value": "caught",
+              "type": "Text"
+            },
+            "text": {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Amet irure cillum laboris cillum laborum sunt tempor do aute ullamco adipisicing."
+                  }
+                }
+              ]
+            },
+            "image": {
+              "__TYPE__": "ImageContent",
+              "origin": {
+                "id": "main",
+                "url": "https://images.unsplash.com/photo-1587614295999-6c1c13675117",
+                "width": 3810,
+                "height": 5715
+              },
+              "url": "https://images.unsplash.com/photo-1587614295999-6c1c13675117",
+              "width": 3810,
+              "height": 5715,
+              "edit": {
+                "zoom": 1,
+                "crop": {
+                  "x": 0,
+                  "y": 0
+                },
+                "background": "transparent"
+              },
+              "thumbnails": {}
+            },
+            "caption": {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Sint laborum dolore mollit nulla proident id aute officia fugiat cillum veniam."
+                  }
+                }
+              ]
+            }
+          },
+          "items": [
+            {
+              "__TYPE__": "GroupItemContent",
+              "value": []
+            }
+          ]
+        }
+      },
+      {
+        "key": "faq_side_by_side$18cb2343-029a-4f0c-a22a-c5b566db0447",
+        "name": "faq_side_by_side",
+        "widget": {
+          "__TYPE__": "SharedSliceContent",
+          "variation": "default",
+          "primary": {
+            "title": {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Officia amet culpa cillum aliquip aute incididunt dolor ex quis commodo qui ad ut consequat ut. Consequat do Lorem ex anim id qui ipsum est adipisicing fugiat ut. Ipsum voluptate incididunt dolore ut et ex eu amet aute laborum incididunt aliquip commodo."
+                  }
+                }
+              ]
+            }
+          },
+          "items": [
+            {
+              "__TYPE__": "GroupItemContent",
+              "value": [
+                [
+                  "question",
+                  {
+                    "__TYPE__": "StructuredTextContent",
+                    "value": [
+                      {
+                        "type": "paragraph",
+                        "content": {
+                          "text": "Labore cupidatat aliquip sunt qui enim."
+                        }
+                      }
+                    ]
+                  }
+                ],
+                [
+                  "answer",
+                  {
+                    "__TYPE__": "StructuredTextContent",
+                    "value": [
+                      {
+                        "type": "paragraph",
+                        "content": {
+                          "text": "Eu duis deserunt veniam aute ex Lorem ut enim velit. Elit labore culpa anim reprehenderit aliquip Lorem officia ipsum enim officia nostrud et."
+                        }
+                      }
+                    ]
+                  }
+                ]
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "meta_title": {
+    "__TYPE__": "FieldContent",
+    "value": "get",
+    "type": "Text"
+  },
+  "meta_description": {
+    "__TYPE__": "FieldContent",
+    "value": "captured",
+    "type": "Text"
+  },
+  "canonicalLink": {
+    "__TYPE__": "LinkContent",
+    "value": {
+      "__TYPE__": "ExternalLink",
+      "url": "http://google.com"
+    }
+  },
+  "social_cards": {
+    "__TYPE__": "GroupContentType",
+    "value": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "social_card_image",
+            {
+              "__TYPE__": "ImageContent",
+              "origin": {
+                "id": "main",
+                "url": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5",
+                "width": 5848,
+                "height": 3899
+              },
+              "url": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5",
+              "width": 5848,
+              "height": 3899,
+              "edit": {
+                "zoom": 1,
+                "crop": {
+                  "x": 0,
+                  "y": 0
+                },
+                "background": "transparent"
+              },
+              "thumbnails": {}
+            }
+          ],
+          [
+            "social_card_title",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "dream",
+              "type": "Text"
+            }
+          ],
+          [
+            "social_card_description",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "writer",
+              "type": "Text"
+            }
+          ]
+        ]
+      }
+    ]
+  },
+  "variants": {
+    "__TYPE__": "GroupContentType",
+    "value": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "variant",
+            {
+              "__TYPE__": "LinkContent",
+              "value": {
+                "__TYPE__": "DocumentLink",
+                "id": "mock_document_id"
+              }
+            }
+          ],
+          [
+            "bucket",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "stomach",
+              "type": "Text"
+            }
+          ]
+        ]
+      }
+    ]
+  },
+  "isVariant": {
+    "__TYPE__": "BooleanContent",
+    "value": false
   }
 }

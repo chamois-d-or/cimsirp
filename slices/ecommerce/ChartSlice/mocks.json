@@ -1,0 +1,75 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default-slice",
+    "primary": {
+      "title": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "heading1",
+            "content": {
+              "text": "Necessary"
+            }
+          }
+        ]
+      },
+      "description": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Veniam do in est aliquip mollit esse tempor. Qui aute ullamco eu quis dolore amet sit culpa."
+            }
+          }
+        ]
+      },
+      "additionalInfoTitle": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Nostrud et ad magna minim ea veniam. Magna et quis ipsum in ad ea nulla occaecat enim id."
+            }
+          }
+        ]
+      },
+      "additionalInfo": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Ullamco eiusmod ad mollit quis esse do. Do ipsum enim ad nostrud magna velit deserunt cupidatat cillum sunt. Nulla esse eu deserunt fugiat nostrud exercitation quis nostrud anim occaecat sint anim exercitation amet ea."
+            }
+          }
+        ]
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "percentageShare",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "41",
+              "type": "Number"
+            }
+          ],
+          [
+            "entityLabel",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "passage",
+              "type": "Text"
+            }
+          ]
+        ]
+      }
+    ]
+  }
+]

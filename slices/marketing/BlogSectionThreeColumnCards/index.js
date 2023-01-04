@@ -15,8 +15,8 @@ const BlogSectionThreeColumnCards = ({ slice }) => (
           </div>
         </div>
         <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
-          {slice.items.map((item) => (
-            <div key={item.title} className="flex flex-col rounded-lg shadow-lg overflow-hidden">
+          {slice.items.map((item, index) => (
+            <div key={index} className="flex flex-col rounded-lg shadow-lg overflow-hidden">
               <div className="flex-shrink-0">
                 <img className="h-48 w-full object-cover" src={item.image.url} alt={item.image.alt} />
               </div>

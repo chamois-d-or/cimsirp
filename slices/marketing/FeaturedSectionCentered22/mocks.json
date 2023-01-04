@@ -1,0 +1,89 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default-slice",
+    "primary": {
+      "title": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "heading1",
+            "content": {
+              "text": "Heavy"
+            }
+          }
+        ]
+      },
+      "description": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Dolor elit enim ad eu cupidatat non dolore aliqua excepteur et. Ut incididunt incididunt enim est laborum. Consequat adipisicing nostrud ut commodo excepteur aute anim Lorem adipisicing voluptate."
+            }
+          }
+        ]
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "icon",
+            {
+              "__TYPE__": "ImageContent",
+              "origin": {
+                "id": "main",
+                "url": "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1",
+                "width": 5616,
+                "height": 3744
+              },
+              "url": "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?rect=936%2C0%2C3744%2C3744&w=48&h=48",
+              "width": 48,
+              "height": 48,
+              "edit": {
+                "zoom": 1,
+                "crop": {
+                  "x": 936,
+                  "y": 0
+                },
+                "background": "transparent"
+              },
+              "thumbnails": {}
+            }
+          ],
+          [
+            "title",
+            {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Culpa ex exercitation dolor commodo sit officia reprehenderit et voluptate sunt minim amet cillum. Exercitation quis reprehenderit et et labore non. Incididunt ad sit deserunt exercitation proident ad aute ex velit reprehenderit ex culpa."
+                  }
+                }
+              ]
+            }
+          ],
+          [
+            "description",
+            {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Eu laboris officia elit incididunt veniam et do incididunt. Veniam sit dolor anim eu irure reprehenderit eu cupidatat labore. Mollit nostrud dolor adipisicing sint cupidatat pariatur culpa dolore laboris minim aliqua ea."
+                  }
+                }
+              ]
+            }
+          ]
+        ]
+      }
+    ]
+  }
+]
