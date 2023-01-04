@@ -1,0 +1,140 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default-slice",
+    "primary": {
+      "title": {
+        "__TYPE__": "FieldContent",
+        "value": "skin",
+        "type": "Text"
+      },
+      "description": {
+        "__TYPE__": "FieldContent",
+        "value": "volume",
+        "type": "Text"
+      },
+      "image": {
+        "__TYPE__": "ImageContent",
+        "origin": {
+          "id": "main",
+          "url": "https://images.unsplash.com/photo-1544731612-de7f96afe55f",
+          "width": 6000,
+          "height": 4000
+        },
+        "url": "https://images.unsplash.com/photo-1544731612-de7f96afe55f?rect=0%2C1048%2C6000%2C1904&w=1024&h=325",
+        "width": 1024,
+        "height": 325,
+        "edit": {
+          "zoom": 1,
+          "crop": {
+            "x": 0,
+            "y": 1048
+          },
+          "background": "transparent"
+        },
+        "thumbnails": {
+          "mobile": {
+            "origin": {
+              "id": "mobile",
+              "url": "https://images.unsplash.com/photo-1596195689404-24d8a8d1c6ea",
+              "width": 5000,
+              "height": 4613
+            },
+            "url": "https://images.unsplash.com/photo-1596195689404-24d8a8d1c6ea?rect=0%2C598%2C5000%2C3417&w=600&h=410",
+            "width": 600,
+            "height": 410,
+            "edit": {
+              "zoom": 1,
+              "crop": {
+                "x": 0,
+                "y": 598
+              },
+              "background": "transparent"
+            }
+          }
+        }
+      },
+      "cta": {
+        "__TYPE__": "FieldContent",
+        "value": "dot",
+        "type": "Text"
+      },
+      "CTALink": {
+        "__TYPE__": "LinkContent",
+        "value": {
+          "__TYPE__": "ExternalLink",
+          "url": "https://prismic.io"
+        }
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": []
+      }
+    ]
+  },
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "withoutCta",
+    "primary": {
+      "title": {
+        "__TYPE__": "FieldContent",
+        "value": "noted",
+        "type": "Text"
+      },
+      "description": {
+        "__TYPE__": "FieldContent",
+        "value": "earlier",
+        "type": "Text"
+      },
+      "image": {
+        "__TYPE__": "ImageContent",
+        "origin": {
+          "id": "main",
+          "url": "https://images.unsplash.com/photo-1547082299-de196ea013d6",
+          "width": 4272,
+          "height": 2848
+        },
+        "url": "https://images.unsplash.com/photo-1547082299-de196ea013d6?rect=0%2C746%2C4272%2C1356&w=1024&h=325",
+        "width": 1024,
+        "height": 325,
+        "edit": {
+          "zoom": 1,
+          "crop": {
+            "x": 0,
+            "y": 746
+          },
+          "background": "transparent"
+        },
+        "thumbnails": {
+          "mobile": {
+            "origin": {
+              "id": "mobile",
+              "url": "https://images.unsplash.com/photo-1593642633279-1796119d5482",
+              "width": 4016,
+              "height": 6016
+            },
+            "url": "https://images.unsplash.com/photo-1593642633279-1796119d5482?rect=0%2C1636%2C4016%2C2744&w=600&h=410",
+            "width": 600,
+            "height": 410,
+            "edit": {
+              "zoom": 1,
+              "crop": {
+                "x": 0,
+                "y": 1636
+              },
+              "background": "transparent"
+            }
+          }
+        }
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": []
+      }
+    ]
+  }
+]

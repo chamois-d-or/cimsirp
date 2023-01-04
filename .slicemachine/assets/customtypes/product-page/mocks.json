@@ -1,87 +1,383 @@
 {
-  "id": "3dae92b5-2a2c-413b-892a-4738ad90803c",
-  "uid": "quam-nisi-eum",
-  "type": "product-page",
-  "data": {
-    "description": [
+  "uid": {
+    "__TYPE__": "UIDContent",
+    "value": "perfect"
+  },
+  "product": {
+    "__TYPE__": "IntegrationFieldsContent",
+    "value": "integration-field-product-id"
+  },
+  "description": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
       {
         "type": "paragraph",
-        "text": "Elit commodo dolor est duis.",
-        "spans": []
+        "content": {
+          "text": "Duis cupidatat velit veniam consectetur. Culpa reprehenderit labore aliquip. Enim ad tempor irure anim quis nostrud tempor id commodo eu irure cillum qui ut."
+        }
       }
-    ],
-    "highlights": [
+    ]
+  },
+  "highlights": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
       {
         "type": "paragraph",
-        "text": "Reprehenderit cupidatat velit id eiusmod sit.",
-        "spans": []
+        "content": {
+          "text": "Consequat pariatur aliqua exercitation. Ut cillum laborum cupidatat ex et et sunt esse laborum enim in. Commodo id labore enim laborum occaecat fugiat incididunt tempor pariatur adipisicing proident."
+        }
       }
-    ],
-    "details": [
+    ]
+  },
+  "details": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
       {
         "type": "paragraph",
-        "text": "Duis cupidatat ad minim incididunt nulla consequat elit voluptate fugiat.",
-        "spans": []
+        "content": {
+          "text": "Occaecat eu dolore incididunt minim ipsum velit sint esse laboris elit."
+        }
       }
-    ],
-    "meta_title": "evolve impactful technologies",
-    "meta_description": "unleash holistic relationships",
-    "canonicalLink": {
-      "link_type": "Web",
-      "url": "https://slicemachine.dev"
-    },
-    "social_cards": [
+    ]
+  },
+  "slices": {
+    "__TYPE__": "SliceContentType",
+    "value": [
       {
-        "social_card_image": {
-          "dimensions": {
-            "width": 900,
-            "height": 500
+        "key": "promo_section_with_background_image$457a3ebb-2214-4ea8-a084-107d0aa6d91b",
+        "name": "promo_section_with_background_image",
+        "widget": {
+          "__TYPE__": "SharedSliceContent",
+          "variation": "default-slice",
+          "primary": {
+            "title": {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "heading1",
+                  "content": {
+                    "text": "Means"
+                  }
+                }
+              ]
+            },
+            "description": {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Incididunt mollit voluptate non nisi tempor ullamco adipisicing nulla labore. Aliquip cillum ad esse aliquip exercitation sunt aliqua aliqua est cupidatat dolore officia labore incididunt aliquip."
+                  }
+                }
+              ]
+            },
+            "image": {
+              "__TYPE__": "ImageContent",
+              "origin": {
+                "id": "main",
+                "url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a",
+                "width": 3456,
+                "height": 4320
+              },
+              "url": "https://images.unsplash.com/photo-1551739440-5dd934d3a94a?rect=0%2C1475%2C3456%2C1370&w=1216&h=482",
+              "width": 1216,
+              "height": 482,
+              "edit": {
+                "zoom": 1,
+                "crop": {
+                  "x": 0,
+                  "y": 1475
+                },
+                "background": "transparent"
+              },
+              "thumbnails": {
+                "mobile": {
+                  "origin": {
+                    "id": "mobile",
+                    "url": "https://images.unsplash.com/photo-1589321599763-d66926c29613",
+                    "width": 3168,
+                    "height": 4752
+                  },
+                  "url": "https://images.unsplash.com/photo-1589321599763-d66926c29613?rect=0%2C1216%2C3168%2C2320&w=605&h=443",
+                  "width": 605,
+                  "height": 443,
+                  "edit": {
+                    "zoom": 1,
+                    "crop": {
+                      "x": 0,
+                      "y": 1216
+                    },
+                    "background": "transparent"
+                  }
+                }
+              }
+            },
+            "link": {
+              "__TYPE__": "LinkContent",
+              "value": {
+                "__TYPE__": "DocumentLink",
+                "id": "mock_document_id"
+              }
+            },
+            "linkLabel": {
+              "__TYPE__": "FieldContent",
+              "value": "exclaimed",
+              "type": "Text"
+            }
           },
-          "alt": "Placeholder image",
-          "copyright": null,
-          "url": "https://images.unsplash.com/photo-1491975474562-1f4e30bc9468?w=900&h=500&fit=crop"
-        },
-        "social_card_title": "deliver back-end eyeballs",
-        "social_card_description": "exploit compelling mindshare"
+          "items": [
+            {
+              "__TYPE__": "GroupItemContent",
+              "value": []
+            }
+          ]
+        }
       },
       {
-        "social_card_image": {
-          "dimensions": {
-            "width": 900,
-            "height": 500
+        "key": "product_list_with_cta$39ee2098-fc70-4850-8616-285e4b5b22ce",
+        "name": "product_list_with_cta",
+        "widget": {
+          "__TYPE__": "SharedSliceContent",
+          "variation": "default-slice",
+          "primary": {
+            "title": {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "heading1",
+                  "content": {
+                    "text": "Repeat"
+                  }
+                }
+              ]
+            },
+            "description": {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Ad quis laborum velit id commodo est qui proident nulla nulla. Deserunt incididunt proident dolore eiusmod sunt eu sunt nostrud dolor velit proident ex eu."
+                  }
+                }
+              ]
+            },
+            "link": {
+              "__TYPE__": "LinkContent",
+              "value": {
+                "__TYPE__": "DocumentLink",
+                "id": "mock_document_id"
+              }
+            }
           },
-          "alt": "Placeholder image",
-          "copyright": null,
-          "url": "https://images.unsplash.com/photo-1607582278043-57198ac8da43?w=900&h=500&fit=crop"
-        },
-        "social_card_title": "incubate cutting-edge relationships",
-        "social_card_description": "visualize cross-media applications"
+          "items": [
+            {
+              "__TYPE__": "GroupItemContent",
+              "value": [
+                [
+                  "productLink",
+                  {
+                    "__TYPE__": "LinkContent",
+                    "value": {
+                      "__TYPE__": "DocumentLink",
+                      "id": "mock_document_id"
+                    }
+                  }
+                ]
+              ]
+            }
+          ]
+        }
       },
       {
-        "social_card_image": {
-          "dimensions": {
-            "width": 900,
-            "height": 500
+        "key": "product_features_with_wide_images$11b68c98-d712-43be-abef-0d70e2459117",
+        "name": "product_features_with_wide_images",
+        "widget": {
+          "__TYPE__": "SharedSliceContent",
+          "variation": "default-slice",
+          "primary": {
+            "title": {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "heading1",
+                  "content": {
+                    "text": "Slightly"
+                  }
+                }
+              ]
+            },
+            "description": {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Ut Lorem amet in quis."
+                  }
+                }
+              ]
+            },
+            "subtitle": {
+              "__TYPE__": "StructuredTextContent",
+              "value": [
+                {
+                  "type": "paragraph",
+                  "content": {
+                    "text": "Non nisi minim non nostrud culpa voluptate elit. Non aliquip consectetur Lorem sint minim incididunt laboris culpa. Nostrud velit ut officia cillum est ipsum reprehenderit excepteur."
+                  }
+                }
+              ]
+            }
           },
-          "alt": "Placeholder image",
-          "copyright": null,
-          "url": "https://images.unsplash.com/photo-1601933973783-43cf8a7d4c5f?w=900&h=500&fit=crop"
-        },
-        "social_card_title": "synergize efficient vortals",
-        "social_card_description": "incentivize sexy channels"
-      },
+          "items": [
+            {
+              "__TYPE__": "GroupItemContent",
+              "value": [
+                [
+                  "image",
+                  {
+                    "__TYPE__": "ImageContent",
+                    "origin": {
+                      "id": "main",
+                      "url": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d",
+                      "width": 4076,
+                      "height": 2712
+                    },
+                    "url": "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?rect=0%2C541%2C4076%2C1630&w=800&h=320",
+                    "width": 800,
+                    "height": 320,
+                    "edit": {
+                      "zoom": 1,
+                      "crop": {
+                        "x": 0,
+                        "y": 541
+                      },
+                      "background": "transparent"
+                    },
+                    "thumbnails": {
+                      "mobile": {
+                        "origin": {
+                          "id": "mobile",
+                          "url": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6",
+                          "width": 3212,
+                          "height": 3880
+                        },
+                        "url": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?rect=0%2C1297%2C3212%2C1287&w=352&h=141",
+                        "width": 352,
+                        "height": 141,
+                        "edit": {
+                          "zoom": 1,
+                          "crop": {
+                            "x": 0,
+                            "y": 1297
+                          },
+                          "background": "transparent"
+                        }
+                      }
+                    }
+                  }
+                ],
+                [
+                  "title",
+                  {
+                    "__TYPE__": "StructuredTextContent",
+                    "value": [
+                      {
+                        "type": "paragraph",
+                        "content": {
+                          "text": "Eiusmod fugiat pariatur cupidatat qui aliquip in velit nostrud nisi qui nulla sint sint occaecat exercitation. Consectetur cupidatat ipsum velit irure eiusmod et nisi officia fugiat sint labore ea. Dolore elit magna ipsum et quis magna esse deserunt aliquip."
+                        }
+                      }
+                    ]
+                  }
+                ],
+                [
+                  "description",
+                  {
+                    "__TYPE__": "StructuredTextContent",
+                    "value": [
+                      {
+                        "type": "paragraph",
+                        "content": {
+                          "text": "Enim fugiat fugiat cupidatat mollit voluptate sit tempor elit voluptate. Est consectetur excepteur laboris mollit esse labore ea esse sint."
+                        }
+                      }
+                    ]
+                  }
+                ]
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "meta_title": {
+    "__TYPE__": "FieldContent",
+    "value": "whole",
+    "type": "Text"
+  },
+  "meta_description": {
+    "__TYPE__": "FieldContent",
+    "value": "pet",
+    "type": "Text"
+  },
+  "canonicalLink": {
+    "__TYPE__": "LinkContent",
+    "value": {
+      "__TYPE__": "ExternalLink",
+      "url": "http://google.com"
+    }
+  },
+  "social_cards": {
+    "__TYPE__": "GroupContentType",
+    "value": [
       {
-        "social_card_image": {
-          "dimensions": {
-            "width": 900,
-            "height": 500
-          },
-          "alt": "Placeholder image",
-          "copyright": null,
-          "url": "https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?w=900&h=500&fit=crop"
-        },
-        "social_card_title": "reintermediate enterprise technologies",
-        "social_card_description": "incentivize vertical e-business"
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "social_card_image",
+            {
+              "__TYPE__": "ImageContent",
+              "origin": {
+                "id": "main",
+                "url": "https://images.unsplash.com/photo-1491975474562-1f4e30bc9468",
+                "width": 4000,
+                "height": 6000
+              },
+              "url": "https://images.unsplash.com/photo-1491975474562-1f4e30bc9468",
+              "width": 4000,
+              "height": 6000,
+              "edit": {
+                "zoom": 1,
+                "crop": {
+                  "x": 0,
+                  "y": 0
+                },
+                "background": "transparent"
+              },
+              "thumbnails": {}
+            }
+          ],
+          [
+            "social_card_title",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "quick",
+              "type": "Text"
+            }
+          ],
+          [
+            "social_card_description",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "inch",
+              "type": "Text"
+            }
+          ]
+        ]
       }
     ]
   }

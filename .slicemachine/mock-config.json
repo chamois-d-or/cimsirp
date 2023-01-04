@@ -40,7 +40,17 @@
       }
     },
     "TestSlice": {},
-    "BenjaminSlice": {}
+    "BenjaminSlice": {},
+    "HeroBanner": {
+      "default-slice": {
+        "primary": {}
+      }
+    },
+    "TestTestTestSlice": {
+      "default": {
+        "primary": {}
+      }
+    }
   },
   "slices/marketing": {
     "ContentSectionCentered": {

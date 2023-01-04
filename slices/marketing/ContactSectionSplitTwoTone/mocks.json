@@ -1,0 +1,102 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default-slice",
+    "primary": {
+      "title": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Quis laborum nostrud aliquip duis do cupidatat commodo culpa commodo. Laborum dolor consequat dolore nostrud deserunt aute in ut aute minim aliqua in esse est nisi. Est eu reprehenderit culpa nisi laborum dolore irure elit."
+            }
+          }
+        ]
+      },
+      "description": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Elit qui quis ex nisi exercitation reprehenderit exercitation reprehenderit pariatur aliqua nulla et labore."
+            }
+          }
+        ]
+      },
+      "address": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Labore laborum labore nulla aliquip laborum elit mollit dolor in sint Lorem ipsum irure fugiat incididunt. Duis sunt ut adipisicing laboris nulla sint deserunt ullamco excepteur esse ex id mollit anim."
+            }
+          }
+        ]
+      },
+      "phone": {
+        "__TYPE__": "FieldContent",
+        "value": "growth",
+        "type": "Text"
+      },
+      "email": {
+        "__TYPE__": "FieldContent",
+        "value": "let",
+        "type": "Text"
+      },
+      "careerText": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Laboris id irure fugiat officia ipsum cillum aliquip fugiat duis. Pariatur occaecat adipisicing aliqua nostrud dolore tempor magna tempor dolore. Occaecat nisi esse tempor aliqua occaecat culpa laboris eu."
+            }
+          }
+        ]
+      },
+      "careerLink": {
+        "__TYPE__": "LinkContent",
+        "value": {
+          "__TYPE__": "ExternalLink",
+          "url": "https://prismic.io"
+        }
+      },
+      "CareerLinkText": {
+        "__TYPE__": "FieldContent",
+        "value": "movie",
+        "type": "Text"
+      },
+      "cta": {
+        "__TYPE__": "FieldContent",
+        "value": "most",
+        "type": "Text"
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": [
+          [
+            "field",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "brown",
+              "type": "Text"
+            }
+          ],
+          [
+            "fieldPlaceholder",
+            {
+              "__TYPE__": "FieldContent",
+              "value": "several",
+              "type": "Text"
+            }
+          ]
+        ]
+      }
+    ]
+  }
+]

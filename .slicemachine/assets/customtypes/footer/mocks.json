@@ -1,0 +1,67 @@
+{
+  "newsletter_title": {
+    "__TYPE__": "FieldContent",
+    "value": "post",
+    "type": "Text"
+  },
+  "newsletter_description": {
+    "__TYPE__": "FieldContent",
+    "value": "matter",
+    "type": "Text"
+  },
+  "newsletter_button": {
+    "__TYPE__": "FieldContent",
+    "value": "herself",
+    "type": "Text"
+  },
+  "copyright": {
+    "__TYPE__": "FieldContent",
+    "value": "bar",
+    "type": "Text"
+  },
+  "body": {
+    "__TYPE__": "SliceContentType",
+    "value": [
+      {
+        "key": "footer_column$bd3109d2-88f2-400b-a446-b2060227bce9",
+        "name": "footer_column",
+        "widget": {
+          "__TYPE__": "SharedSliceContent",
+          "variation": "default-slice",
+          "primary": {
+            "section_title": {
+              "__TYPE__": "FieldContent",
+              "value": "tool",
+              "type": "Text"
+            }
+          },
+          "items": [
+            {
+              "__TYPE__": "GroupItemContent",
+              "value": [
+                [
+                  "link",
+                  {
+                    "__TYPE__": "LinkContent",
+                    "value": {
+                      "__TYPE__": "DocumentLink",
+                      "id": "mock_document_id"
+                    }
+                  }
+                ],
+                [
+                  "link_label",
+                  {
+                    "__TYPE__": "FieldContent",
+                    "value": "signal",
+                    "type": "Text"
+                  }
+                ]
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,92 @@
+[
+  {
+    "__TYPE__": "SharedSliceContent",
+    "variation": "default-slice",
+    "primary": {
+      "title1": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "heading1",
+            "content": {
+              "text": "Observe"
+            }
+          }
+        ]
+      },
+      "title2": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "heading1",
+            "content": {
+              "text": "Dried"
+            }
+          }
+        ]
+      },
+      "description": {
+        "__TYPE__": "StructuredTextContent",
+        "value": [
+          {
+            "type": "paragraph",
+            "content": {
+              "text": "Velit do do est nulla magna est voluptate nulla labore proident occaecat culpa adipisicing."
+            }
+          }
+        ]
+      },
+      "cta1": {
+        "__TYPE__": "LinkContent",
+        "value": {
+          "__TYPE__": "DocumentLink",
+          "id": "mock_document_id"
+        }
+      },
+      "ctaLabel1": {
+        "__TYPE__": "FieldContent",
+        "value": "exercise",
+        "type": "Text"
+      },
+      "cta2": {
+        "__TYPE__": "LinkContent",
+        "value": {
+          "__TYPE__": "DocumentLink",
+          "id": "mock_document_id"
+        }
+      },
+      "ctaLabel2": {
+        "__TYPE__": "FieldContent",
+        "value": "money",
+        "type": "Text"
+      },
+      "image": {
+        "__TYPE__": "ImageContent",
+        "origin": {
+          "id": "main",
+          "url": "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b",
+          "width": 3560,
+          "height": 5340
+        },
+        "url": "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b",
+        "width": 3560,
+        "height": 5340,
+        "edit": {
+          "zoom": 1,
+          "crop": {
+            "x": 0,
+            "y": 0
+          },
+          "background": "transparent"
+        },
+        "thumbnails": {}
+      }
+    },
+    "items": [
+      {
+        "__TYPE__": "GroupItemContent",
+        "value": []
+      }
+    ]
+  }
+]
