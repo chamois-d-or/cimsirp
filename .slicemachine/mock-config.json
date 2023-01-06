@@ -50,7 +50,8 @@
       "default": {
         "primary": {}
       }
-    }
+    },
+    "ComeSlice": {}
   },
   "slices/marketing": {
     "ContentSectionCentered": {
