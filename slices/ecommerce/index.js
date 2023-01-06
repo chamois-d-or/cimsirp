@@ -3,7 +3,6 @@
 import CategoryPreviewWithImageBackgrounds from './CategoryPreviewWithImageBackgrounds';
 import CategoryPreviewWithScrollingCards from './CategoryPreviewWithScrollingCards';
 import ChartSlice from './ChartSlice';
-import ComeSlice from './ComeSlice';
 import ExternalVideoSlice from './ExternalVideoSlice';
 import HeroBanner from './HeroBanner';
 import ProductFeaturesWithWideImages from './ProductFeaturesWithWideImages';
@@ -17,7 +16,6 @@ export {
 	CategoryPreviewWithImageBackgrounds,
 	CategoryPreviewWithScrollingCards,
 	ChartSlice,
-	ComeSlice,
 	ExternalVideoSlice,
 	HeroBanner,
 	ProductFeaturesWithWideImages,
@@ -32,7 +30,6 @@ export const components = {
 	category_preview_with_image_backgrounds: CategoryPreviewWithImageBackgrounds,
 	category_preview_with_scrolling_cards: CategoryPreviewWithScrollingCards,
 	chart_slice: ChartSlice,
-	come_slice: ComeSlice,
 	external_video_slice: ExternalVideoSlice,
 	hero_banner: HeroBanner,
 	product_features_with_wide_images: ProductFeaturesWithWideImages,

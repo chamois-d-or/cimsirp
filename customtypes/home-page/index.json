@@ -33,9 +33,6 @@
             },
             "contact_section_split_two_tone": {
               "type": "SharedSlice"
-            },
-            "come_slice": {
-              "type": "SharedSlice"
             }
           }
         }
