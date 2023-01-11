@@ -2,8 +2,8 @@
 	"_latest": "0.3.3",
 	"apiEndpoint": "https://cimsirp.cdn.prismic.io/api/v2",
 	"libraries": [
-		"@/slices/marketing",
 		"@/slices/ecommerce",
+		"@/slices/marketing",
 		"@/slices/navigation"
 	],
 	"localSliceSimulatorURL": "http://localhost:3000/slice-simulator",
