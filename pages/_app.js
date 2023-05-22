@@ -28,9 +28,7 @@ export default function App({ Component, pageProps }) {
       richTextComponents={richTextComponents}
       //linkResolver={linkResolver}
     >
-      <PrismicPreview repositoryName={repositoryName}>
         <Component {...pageProps} />
-      </PrismicPreview>
     </PrismicProvider>
   )
 }
